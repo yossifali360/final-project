@@ -1,0 +1,21 @@
+.banner{
+    background-image: url(../public/assets/banner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+}
+.banner .overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 24, 77, 0.8);
+}
+.bannerText{
+    font-family: 'Rowdies', sans-serif;
+}
+.bannerText h2{
+    max-width: 50%;
+}

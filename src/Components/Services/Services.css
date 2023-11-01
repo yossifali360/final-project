@@ -1,0 +1,32 @@
+.item .thump{
+    background-image: url(../public/assets/bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    transition: .2s;
+}
+.item .thump::after{
+    content: "";
+    position: absolute;
+    background: rgba(0, 19, 62, 0.943);
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+}
+.item:hover .thump::after{
+    opacity: 0;
+}
+.item img{
+    vertical-align: middle;
+}
+.parent .thump{
+    transform: translateY(-60px);
+}
+.item{
+    font-family: 'Lemonada', sans-serif;
+    
+}

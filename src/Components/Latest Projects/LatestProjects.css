@@ -1,0 +1,18 @@
+iframe{
+    height: 450px;
+}
+.latestProjects .swiper-button-prev::after,
+.latestProjects .swiper-button-next::after{
+    font-size: 40px !important;
+}
+.latestProjects .swiper-button-prev,
+.latestProjects .swiper-button-next{
+    color: #fff !important;
+    padding: 0 45px;
+}
+.HeartCarton{
+    width: 80px;
+    top: -25px;
+    right: -17px;
+    transform: rotate(37deg);
+}

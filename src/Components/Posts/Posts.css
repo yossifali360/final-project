@@ -1,0 +1,9 @@
+.postImages img{
+    height: 280px;
+}
+.w-95{
+    width: 95%;
+}
+.post{
+    white-space: pre-line;
+}

@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.btn{
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-500 my-5
+}
+.btnDanger{
+    @apply bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-500 my-5
+}
+.line {
+    height: 8px;
+    width: 8px;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 10px;
+}
+.line::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 50px;
+    left: -55px;
+    top: 3px;
+}
+.line::before{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 50px;
+    right: -55px;
+    top: 3px;
+}
+.mainGradient{
+    @apply bg-gradient-to-r from-emerald-200 via-emerald-800 to-emerald-500;
+    filter: blur(20px);
+    -webkit-filter: blur(150px);
+    border-radius: 9999px;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+.fPass{
+    height: 500px;
+}
+.bgPngCircle{
+    background-image: url(./assets/png3.png);
+    background-position: center;
+    background-repeat:  no-repeat;
+    opacity: 0.5;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.bgPng{
+    background-image: url(./assets/png1.png);
+    background-position: center;
+    background-repeat:  no-repeat;
+    opacity: 0.7;
+    width: 100%;
+    max-width: 100%;
+    height: 80%;
+}
+.ArrowUp{
+    color: white;
+    position: fixed;
+    bottom: 36px;
+    right: 36px;
+    z-index: 1;
+    transform: rotate(360deg);
+}
+.progress-wheel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(-90deg);
+}
+
+.progress-wheel circle {
+    stroke-dashoffset: 0;
+    stroke-width: 20%;
+    fill: rgb(16 185 129);
+    background-color: blue;
+    z-index: -1;
+}
+
+.progress-wheel .bg {
+    stroke: rgb(16 185 129);
+    opacity: 0.5;
+}
+
+.progress-wheel .progress {
+    stroke: rgb(16 185 129);
+    stroke-dasharray: 0, 1;
+  }

@@ -1,0 +1,31 @@
+.test{
+    background-image: url("https://thedailyguardian.com/wp-content/uploads/2023/06/1-74.jpg");
+}
+.testt{
+    animation: test 1s ;
+}
+.clear{
+    animation: test2 1s ;
+}
+@keyframes test {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes test2 {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

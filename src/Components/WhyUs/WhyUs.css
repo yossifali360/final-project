@@ -1,0 +1,22 @@
+.numberFont{
+    font-family: 'Rowdies', sans-serif;
+}
+.left,
+.right{
+    width: 20%;
+}
+.center{
+    width: 50%;
+    animation: mapMover 3s infinite ease-in-out;
+}
+@keyframes mapMover{
+    0%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(10px);
+    }
+}

@@ -1,0 +1,27 @@
+.promotionImg{
+    height: 500px;
+}
+.line {
+    height: 8px;
+    width: 8px;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 10px;
+}
+.line::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 50px;
+    left: -55px;
+    top: 3px;
+}
+.line::before{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 50px;
+    right: -55px;
+    top: 3px;
+}

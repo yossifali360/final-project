@@ -1,0 +1,241 @@
+{
+	"users": [
+		{
+			"name": "aaa",
+			"email": "yossifali149@gmail.com",
+			"password": "yossifali149@gmail.com",
+			"Role": "User",
+			"id": 1,
+			"favCart": [
+        {
+          "id": 1,
+          "header": "Azure, Mamsha Al Saadiyat, Saadiyat Cultural District, Saadiyat Island, Abu Dhabi",
+          "text": "Metropolitan Capital Real Estate is proud to be bringing you this vivacious 2BR apartment that will fill your heart with joy. It takes the breath away with its museum view that is sure to capture the imagination. And there's the wonderful veranda for chilling with a cool drink on a hot day. The apartment comes with unlimited use of a cooling swimming pool, along with a park, a children's playground, a gym, a jogging track and a beach for your body and mind activities. It shouts natural charm as well as: \n- 2 classy bedrooms \n- an impeccable kitchen \n- a laundry room \n- a living room \n- enveloped-in-light floor-to-ceiling windows \n - sizeable walk-in closet \n- conveniently-proportioned built-in wardrobes \n- basement car park There's local shops, cafes, a supermarket, restaurants, a community retail centre moments from you.",
+          "images": [
+            "https://images.bayut.com/thumbnails/477535045-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535046-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535047-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535048-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535060-800x600.webp"
+          ]
+        },
+        {
+          "id": 2,
+          "header": "Azure, Mamsha Al Saadiyat, Saadiyat Cultural District, Saadiyat Island, Abu Dhabi",
+          "text": "Metropolitan Capital Real Estate is proud to be bringing you this vivacious 2BR apartment that will fill your heart with joy. It takes the breath away with its museum view that is sure to capture the imagination. And there's the wonderful veranda for chilling with a cool drink on a hot day. The apartment comes with unlimited use of a cooling swimming pool, along with a park, a children's playground, a gym, a jogging track and a beach for your body and mind activities. It shouts natural charm as well as: \n- 2 classy bedrooms \n- an impeccable kitchen \n- a laundry room \n- a living room \n- enveloped-in-light floor-to-ceiling windows \n - sizeable walk-in closet \n- conveniently-proportioned built-in wardrobes \n- basement car park There's local shops, cafes, a supermarket, restaurants, a community retail centre moments from you.",
+          "images": [
+            "https://images.bayut.com/thumbnails/477535045-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535046-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535047-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535048-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535060-800x600.webp"
+          ]
+        },
+        {
+          "id": 3,
+          "header": "Azure, Mamsha Al Saadiyat, Saadiyat Cultural District, Saadiyat Island, Abu Dhabi",
+          "text": "Metropolitan Capital Real Estate is proud to be bringing you this vivacious 2BR apartment that will fill your heart with joy. It takes the breath away with its museum view that is sure to capture the imagination. And there's the wonderful veranda for chilling with a cool drink on a hot day. The apartment comes with unlimited use of a cooling swimming pool, along with a park, a children's playground, a gym, a jogging track and a beach for your body and mind activities. It shouts natural charm as well as: \n- 2 classy bedrooms \n- an impeccable kitchen \n- a laundry room \n- a living room \n- enveloped-in-light floor-to-ceiling windows \n - sizeable walk-in closet \n- conveniently-proportioned built-in wardrobes \n- basement car park There's local shops, cafes, a supermarket, restaurants, a community retail centre moments from you.",
+          "MainImg" : "https://images.bayut.com/thumbnails/477535045-800x600.webp",
+          "images": [
+            "https://images.bayut.com/thumbnails/477535045-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535046-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535047-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535048-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535060-800x600.webp"
+          ]
+        },
+        {
+          "id": 4,
+          "header": "Azure, Mamsha Al Saadiyat, Saadiyat Cultural District, Saadiyat Island, Abu Dhabi",
+          "text": "Metropolitan Capital Real Estate is proud to be bringing you this vivacious 2BR apartment that will fill your heart with joy. It takes the breath away with its museum view that is sure to capture the imagination. And there's the wonderful veranda for chilling with a cool drink on a hot day. The apartment comes with unlimited use of a cooling swimming pool, along with a park, a children's playground, a gym, a jogging track and a beach for your body and mind activities. It shouts natural charm as well as: \n- 2 classy bedrooms \n- an impeccable kitchen \n- a laundry room \n- a living room \n- enveloped-in-light floor-to-ceiling windows \n - sizeable walk-in closet \n- conveniently-proportioned built-in wardrobes \n- basement car park There's local shops, cafes, a supermarket, restaurants, a community retail centre moments from you.",
+          "images": [
+            "https://images.bayut.com/thumbnails/477535045-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535046-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535047-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535048-800x600.webp",
+            "https://images.bayut.com/thumbnails/477535060-800x600.webp"
+          ]
+        }
+			],
+      "HisAuctions":[
+        
+      ]
+		}
+	],
+	"posts": [
+		{
+			"id": 1,
+			"header": "Azure, Mamsha Al Saadiyat, Saadiyat Cultural District, Saadiyat Island, Abu Dhabi",
+			"text": "Metropolitan Capital Real Estate is proud to be bringing you this vivacious 2BR apartment that will fill your heart with joy. It takes the breath away with its museum view that is sure to capture the imagination. And there's the wonderful veranda for chilling with a cool drink on a hot day. The apartment comes with unlimited use of a cooling swimming pool, along with a park, a children's playground, a gym, a jogging track and a beach for your body and mind activities. It shouts natural charm as well as: \n- 2 classy bedrooms \n- an impeccable kitchen \n- a laundry room \n- a living room \n- enveloped-in-light floor-to-ceiling windows \n - sizeable walk-in closet \n- conveniently-proportioned built-in wardrobes \n- basement car park There's local shops, cafes, a supermarket, restaurants, a community retail centre moments from you.",
+      "MainImg" : "https://images.bayut.com/thumbnails/477535045-800x600.webp",
+			"images": [
+				"https://images.bayut.com/thumbnails/477535045-800x600.webp",
+				"https://images.bayut.com/thumbnails/477535046-800x600.webp",
+				"https://images.bayut.com/thumbnails/477535047-800x600.webp",
+				"https://images.bayut.com/thumbnails/477535048-800x600.webp",
+				"https://images.bayut.com/thumbnails/477535060-800x600.webp"
+			]
+		},
+		{
+			"id": 2,
+			"header": "2 Project Name : Midtown Condo Mall",
+			"text": "It located at Midtown Condo Compound in the New Administrative Capitalin front of Expo City and Disneyland on the main street next to the diplomatic quarter and Al Sefarat Neighbourhood, near the Olympic City, close to the Regional Ring Road, Mohammed Bin Zayed Southern Axis, the Canadian University and the British University, it has a magnificent view over the Green River.",
+      "MainImg" : "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+			"images": [
+				"https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				"https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+			]
+		},
+		{
+			"id": 3,
+			"header": "3 Project Name : Midtown Condo Mall",
+			"text": "It located at Midtown Condo Compound in the New Administrative Capitalin front of Expo City and Disneyland on the main street next to the diplomatic quarter and Al Sefarat Neighbourhood, near the Olympic City, close to the Regional Ring Road, Mohammed Bin Zayed Southern Axis, the Canadian University and the British University, it has a magnificent view over the Green River.",
+      "MainImg" : "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+			"images": [
+				"https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				"https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				"https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+			]
+		}
+	],
+	"Promotions": [
+		{
+			"id": 1,
+			"img": "./assets/promotion1.jpg"
+		},
+		{
+			"id": 2,
+			"img": "./assets/promotion2.jpg"
+		},
+		{
+			"id": 3,
+			"img": "./assets/promotion3.jpg"
+		},
+		{
+			"id": 4,
+			"img": "./assets/promotion4.jpg"
+		}
+	],
+	"Ads": [
+		{
+			"id": 1,
+			"img": "./assets/ad1.jpg"
+		},
+		{
+			"id": 2,
+			"img": "./assets/ad2.jpg"
+		},
+		{
+			"id": 3,
+			"img": "./assets/ad3.webp"
+		}
+	],
+	"Projects": [
+		{
+			"id": 1,
+			"header": "House B14-5 Crossways",
+			"text": "House B14-5 Farmstead Crescent, North Rocks, Crossways Farm Village, 6375, ZA",
+      "MainImg" : "./assets/1.png",
+			"iframe": "https://my.matterport.com/show/?m=4WwCSE6PU73"
+		},
+		{
+			"id": 2,
+			"header": "House B12-9 Crossways",
+			"text": "House B12-9 Farmstead Crescent, North Rocks, Crossways Farm Village, Eastern Cape 6375 South Africa",
+      "MainImg" : "./assets/2.png",
+			"iframe": "https://my.matterport.com/show/?m=FDW8uc9THYi"
+		},
+		{
+			"id": 3,
+			"header": "Stansted House",
+			"text": "Stansted House, Rowland's Castle PO9 6DX, UK",
+      "MainImg" : "./assets/3.png",
+			"iframe": "https://my.matterport.com/show/?m=j4mphJvEk9s"
+		},
+		{
+			"id": 4,
+			"header": "House B7-16 Crossways",
+			"text": "House B7-16, The Castle, Crossways Farm Village, 6375, ZA",
+      "MainImg" : "./assets/4.png",
+			"iframe": "https://my.matterport.com/show/?m=RiAr3yWgjRj"
+		},
+		{
+			"id": 5,
+			"header": "Cleland House, John Islip Street, Westminster SW1P",
+			"text": "Cleland House, John Islip St, Westminster, SW1P 4FF, UK",
+      "MainImg" : "./assets/5.png",
+			"iframe": "https://my.matterport.com/show/?m=e4zXsfaoRY3"
+		},
+		{
+			"id": 6,
+			"header": "Three bedroom house for rent",
+			"text": "Sarafovo, Burgas, Bulgaria",
+      "MainImg" : "./assets/6.png",
+			"iframe": "https://my.matterport.com/show/?m=oxQMvzJYVtk"
+		},
+		{
+			"id": 7,
+			"header": "2544 Cornwall Street, Oceanside California",
+			"text": "August 25, 2023 - 2544 Cornwall Street, Oceanside, CA - House",
+      "MainImg" : "./assets/7.png",
+			"iframe": "https://my.matterport.com/show/?m=L9qETd5X82m"
+		},
+		{
+			"id": 8,
+			"header": "Coombe Lands, Wittersham, Tenterden TN30 7NU, UK",
+			"text": "Pool House at 5 bed detached home in Wittersham. ID2087. Distinctive Homes",
+      "MainImg" : "./assets/8.png",
+			"iframe": "https://my.matterport.com/show/?m=uvVtq8qEn1s"
+		}
+	],
+	"ForgetCodes": [
+		{
+			"Email": "yossifali149@gmail.com",
+			"ForgetCode": 788319,
+			"id": 1
+		},
+		{
+			"Email": "yossifali149@gmail.com",
+			"ForgetCode": 312649,
+			"id": 2
+		},
+		{
+			"Email": "yossifali149@gmail.com",
+			"ForgetCode": 494157,
+			"id": 3
+		}
+	],
+	"Auctions": [
+		{
+			"id": 1,
+      "CurrentPrice" : 500,
+      "NameOfCurrentWinner" : "",
+      "EnterPrice" : 100,
+      "title" : "A Resting Bashi-Bazouk",
+      "desc" : "Sale: Christie's, London, 18 March 1994, lot 178 (as The Arnaut Warrior)\nAcquired from the above by the present owner\n\nArnauts, or bashi-bazouks, were irregulars in the Ottoman army recruited in Serbia and Albania, then part of the Ottoman empire. The strain on the Ottoman feudal system caused by the Empire's wide expanse required heavier reliance on irregular soldiers. They were armed and maintained by the government, but did not receive pay and did not wear uniforms or distinctive badges, preferring to dress in their own distinctive local costume comprising a red tunic and white kilt. Because not formally trained, they could not serve in major military operations but were useful for other tasks such as reconnaissance and outpost duty.\n\nJoanowitch studied at the Vienna Academy under Karl Leopold Müller. His patrons included King Alexander of Serbia. He exhibited in Vienna, Munich, and Berlin, where his meticulously observed Montenegrin and Albanian subjects, particularly of warriors and bashi-bazouks, met with international acclaim, prized by English and American collectors alike.",
+      "MainImg" : "https://p1.liveauctioneers.com/246/305364/163097226_4_x.jpg?quality=80&version=1697030425",
+      "images" :[
+        "https://p1.liveauctioneers.com/246/305364/163097226_4_x.jpg?quality=80&version=1697030425",
+        "https://p1.liveauctioneers.com/246/305364/163097226_1_x.jpg?quality=80&version=1697030425",
+        "https://p1.liveauctioneers.com/246/305364/163097226_3_x.jpg?quality=80&version=1697030425",
+        "https://p1.liveauctioneers.com/246/305364/163097226_2_x.jpg?quality=80&version=1697030425"
+      ]
+		},
+		{
+			"id": 2,
+      "CurrentPrice" : 5000000,
+      "NameOfCurrentWinner" : "",
+      "EnterPrice" : 100000,
+      "title" : "2 A Resting Bashi-Bazouk",
+      "desc" : "2 Sale: Christie's, London, 18 March 1994, lot 178 (as The Arnaut Warrior)\nAcquired from the above by the present owner\n\nArnauts, or bashi-bazouks, were irregulars in the Ottoman army recruited in Serbia and Albania, then part of the Ottoman empire. The strain on the Ottoman feudal system caused by the Empire's wide expanse required heavier reliance on irregular soldiers. They were armed and maintained by the government, but did not receive pay and did not wear uniforms or distinctive badges, preferring to dress in their own distinctive local costume comprising a red tunic and white kilt. Because not formally trained, they could not serve in major military operations but were useful for other tasks such as reconnaissance and outpost duty.\n\nJoanowitch studied at the Vienna Academy under Karl Leopold Müller. His patrons included King Alexander of Serbia. He exhibited in Vienna, Munich, and Berlin, where his meticulously observed Montenegrin and Albanian subjects, particularly of warriors and bashi-bazouks, met with international acclaim, prized by English and American collectors alike.",
+      "MainImg" : "https://p1.liveauctioneers.com/246/305364/163097226_4_x.jpg?quality=80&version=1697030425",
+      "images" :[
+        "https://p1.liveauctioneers.com/246/305364/163097226_4_x.jpg?quality=80&version=1697030425",
+        "https://p1.liveauctioneers.com/246/305364/163097226_4_x.jpg?quality=80&version=1697030425",
+        "https://p1.liveauctioneers.com/246/305364/163097226_4_x.jpg?quality=80&version=1697030425",
+        "https://p1.liveauctioneers.com/246/305364/163097226_4_x.jpg?quality=80&version=1697030425"
+
+      ]
+		}
+	]
+}
