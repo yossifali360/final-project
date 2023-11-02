@@ -12,31 +12,32 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItem, updateFavCart } from "../../rtc/slices/FavCartSlice";
 
 export const LatestProjects = () => {
-    // All Projects
+	// All Projects
 	const [projects, setprojects] = useState([]);
 
-    // All Fav Icons
+	// All Fav Icons
 	const [favIcons, setFavIcons] = useState([]);
 
-    // Render All Projects
+	// Render All Projects
 	useEffect(() => {
 		const waitForData = async () => setprojects(await getProjects());
 		waitForData();
 		setFavIcons(Array(projects.length).fill(false));
-		console.log("no");
 	}, []);
 
-	const userId = useSelector((state) => state.authReducer.userData)
+	const userId = useSelector((state) => state.authReducer.userData);
 	console.log(userId);
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 
 	const toggleFavorite = (index) => {
 		const newFavIcons = [...favIcons];
 		newFavIcons[index] = !newFavIcons[index];
 		setFavIcons(newFavIcons);
-		dispatch(addItem((projects[index])))
-	};	
-	console.log("ss");
+		dispatch(addItem(projects[index]));
+	};
+
+	const cartItems = useSelector((state) => state.favCartReducer.favCart);
+	const Hearticons = new Array(projects.length).fill(false);
 	return (
 		<section className="relative latestProjects">
 			<div className="hidden dark:block absolute mainGradient bottom-10 right-0 w-72 h-48"></div>
@@ -56,10 +57,11 @@ export const LatestProjects = () => {
 						return (
 							<SwiperSlide className="p-3" key={index}>
 								<div className="p-5 my-9 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
+									{cartItems.map((item)=>{(item.header)==project.header ? Hearticons[index] = true : console.log(Hearticons);})}
 									<img
 										src="./assets/HeartCarton.png"
 										className={`HeartCarton absolute ${
-											favIcons[index] ? "show" : "hidden"
+											favIcons[index] || Hearticons[index]==true ? "show" : "hidden"
 										}`}
 										alt="HeartCarton"
 									/>
@@ -71,7 +73,7 @@ export const LatestProjects = () => {
 									<div className="p-5">
 										<a href="#">
 											<h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-												{project.Header}
+												{project.header}
 											</h5>
 										</a>
 										<p className="mb-3 font-normal text-gray-700 dark:text-gray-400">

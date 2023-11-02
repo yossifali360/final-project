@@ -99,10 +99,9 @@ export const Navbar = () => {
 	}, []);
 
 	const cartItems = useSelector((state) => state.favCartReducer.favCart);
-  console.log(cartItems);
-  const handleRemoveCart = () =>{
-    dispatch(removeAllItems())
-  }  
+	const handleRemoveCart = () => {
+		dispatch(removeAllItems());
+	};
 	return (
 		<div className="z-50 sticky top-0">
 			<svg
@@ -159,9 +158,13 @@ export const Navbar = () => {
 									className="text-2xl mx-5 dark:text-white"
 									onClick={toggleDrawer}
 								/>
-								<div className="CartNumber absolute bg-emerald-500 text-center w-6 h-6 rounded-full font-semibold -top-3 right-2">
-                {cartItems ? cartItems.length : null}
-                </div>
+								{isAuth &&
+								cartItems &&
+								cartItems.length >= 1 ? (
+									<div className="CartNumber absolute bg-emerald-500 text-center w-6 h-6 rounded-full font-semibold -top-3 right-2">
+										{cartItems.length}
+									</div>
+								) : null}
 							</div>
 							<div
 								id="drawer-right-example"
@@ -211,26 +214,32 @@ export const Navbar = () => {
 											Your Items
 										</h2>
 									</div>
-                  <div className="FavCart overflow-x-hidden overflow-y-auto">
-                    {cartItems && cartItems.length >= 1
-                      ? cartItems.map((ele,index) => {
-                          return (
-                            <div key={ele.id}>
-                              <FavCardDiv
-                              cartItem={ele}
-                            />
-                            </div>
-                          );
-                        })
-                      : null}
-                  </div>
+									<div className="FavCart overflow-x-hidden overflow-y-auto">
+										{cartItems && cartItems.length >= 1
+											? cartItems.map((ele, index) => {
+													return (
+														<div key={ele.id}>
+															<FavCardDiv
+																cartItem={ele}
+															/>
+														</div>
+													);
+											  })
+											: null}
+									</div>
 									{/* <div className="flex flex-col divide-y divide-gray-200">
 					</div> */}
 									<div className="absolute bottom-0 w-full flex items-center justify-between px-6 py-5 bg-gray-200">
 										<h3 className="text-gray-900 font-semibold">
-											Total Items: {cartItems ? cartItems.length : null}
+											Total Items:{" "}
+											{cartItems
+												? cartItems.length
+												: null}
 										</h3>
-										<button onClick={handleRemoveCart} className="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">
+										<button
+											onClick={handleRemoveCart}
+											className="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg"
+										>
 											Remove All
 										</button>
 									</div>

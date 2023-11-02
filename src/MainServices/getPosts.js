@@ -17,3 +17,7 @@ export const ForgetCodes = async (postCode) => {
 	const data = await myAxios.post(`/ForgetCodes`, postCode);
 	return data.data;
 };
+export const deleteForgetCode = async (id) => {
+        await myAxios.delete(`/ForgetCodes/${id}`);
+        return true;
+};

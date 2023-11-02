@@ -24,22 +24,24 @@ export const ForgetPasswordSent = ({notify}) => {
     const sendEmail = (e,values) => {
         console.log("submit");
         e.preventDefault();
+		// async function sendCode(userData) {
+		// 	const id = await getForgetCodes(userData.Email);
+		// 	if (id.length >= 1){
+		// 		await deleteForgetCode(id[0].id)
+		// 		await ForgetCodes(userData);
+		// 	}
+		// 	else{
+		// 		await ForgetCodes(userData);
+		// 	}
+		// }
+		// sendCode(userData)
         const waitForData = async () => {
-            const aa = await getForgetCodes(ssValue);
-            if (aa.length > 1 ){
-                aa.map((code)=>{
-                    if (code.ForgetCode == values.code){
-                        console.log("True");
-                        navigate(`/ChangePassReset?mail=${ssValue}&code=${code.ForgetCode}`)
-                        notify(`Choose A new Password`,"Success")
-                        // return ;
-                    }else{
-                        notify(`Code is incorrect`,"Error")
-                    }
-                })
-            }else{
-                console.log("The 'aa' array is empty.");
-            }
+            const data = await getForgetCodes(ssValue);
+				if (data[0].ForgetCode == values.code){
+					navigate(`/ChangePassReset?mail=${ssValue}&code=${data[0].ForgetCode}`)
+				}else{
+					notify(`Code is incorrect`,"Error")
+				}
           };
           waitForData()
     };

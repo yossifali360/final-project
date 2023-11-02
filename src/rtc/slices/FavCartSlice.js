@@ -33,7 +33,7 @@ reducers:{
         console.log("ssssssssssss");
         const productObj = state.favCart?.find(ele => ele.id === action.payload.id)
         if (!productObj){
-            state.favCart.push({...action.payload,quantity: 1})
+            state.favCart.push({...action.payload})
         }
     },
     removeItem : (state , action) =>{
@@ -45,7 +45,7 @@ reducers:{
 },
 extraReducers:(builder) =>{
     builder.addCase(getFavCart.fulfilled,(state,action) =>{
-        state.favCart = action.payload.favCart;
+        state.favCart = action.payload;
     })
 }
 })

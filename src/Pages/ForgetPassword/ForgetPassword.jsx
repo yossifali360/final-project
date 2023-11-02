@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../rtc/slices/authSlice";
 import { ForgetPasswordSchema } from "../../Schemas/ForgetPasswordSchema";
 import emailjs from '@emailjs/browser';
-import { ForgetCodes } from "../../MainServices/getPosts";
+import { ForgetCodes, deleteForgetCode, getForgetCodes } from "../../MainServices/getPosts";
 
 const initialValues = {
 	user_email: "",
@@ -26,11 +26,18 @@ export const ForgetPassword = ({notify}) => {
 			"ForgetCode": ForgetCode,
 		};
 		form.current[1].value = ForgetCode;
-		async function ssssqd(userData) {
-			await ForgetCodes(userData);
-			console.log("sss");
+
+		async function sendCode(userData) {
+			const id = await getForgetCodes(userData.Email);
+			if (id.length >= 1){
+				await deleteForgetCode(id[0].id)
+				await ForgetCodes(userData);
+			}
+			else{
+				await ForgetCodes(userData);
+			}
 		}
-		ssssqd(userData)
+		sendCode(userData)
         emailjs.sendForm('service_2slcdjb', 'template_m8tvur5', form.current, 'r-obV8PRJZfeUhbeo')
           .then((result) => {
               console.log(result.text);
@@ -41,8 +48,8 @@ export const ForgetPassword = ({notify}) => {
 		  Navigate(`/ForgetPasswordSent?mail=${form.current[0].value}`)
 		}
 		async function handlePostSubmit(values) {
+			// deleteForgetCode(id)
 			await ForgetCodes(values);
-			console.log("sss");
 		}
 	return (
 		<Formik

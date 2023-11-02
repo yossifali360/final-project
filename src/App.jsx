@@ -44,9 +44,12 @@ function App() {
 		}
 	}, [isAuth]);
 
-	// useEffect(()=>{
-	// 	dispatch(updateFavCart({id: userData.id , favCart: favCart }))
-	// },[favCart])
+	useEffect(()=>{
+		if(isAuth){
+			dispatch(updateFavCart({id: userData.id , favCart: favCart }))
+		}
+	},[favCart])
+
 	// Notify
 	const notify = (msg, type) => {
 		if (type === "Error") {

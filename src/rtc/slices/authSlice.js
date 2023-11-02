@@ -12,6 +12,15 @@ const loginData = JSON.parse(localStorage.getItem("Session")) || {
     userData : null
 }
 
+export const updateUserPassword = createAsyncThunk("auth/updateUserPassword" , async (data) =>{
+    await fetch ('http://localhost:3000/users/' +data.id , {
+    method: 'PATCH',
+    headers:{
+        'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify({password : data.password})
+})
+})
 const initialState ={
     users : [],
     ...loginData
