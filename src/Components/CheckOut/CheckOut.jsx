@@ -71,7 +71,7 @@ export const CheckOut = ({ notify }) => {
         const amount = AuctionData.EnterPrice + AuctionData.EnterPrice * 0.25;
         console.log(amount);
         console.log(usedPhone);
-        const lang="ar";
+        const lang="en";
         const email = SessionData.userData.email
         console.log(email);
         console.log(`https://sms.5brahost.com/api/payment_link_check?phone=${usedPhone}&amount=${amount}&user_name=${email}&store_id=${storeid}&lang=${lang}`);
