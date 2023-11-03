@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { getSingleAuctions } from "../../MainServices/getAuctions";
 import { Formik } from "formik";
 import { CheckOutSchema } from "../../Schemas/CheckOutSchema";
+import { myAxiosPay } from "../../MainServices/api";
+import { getpayData } from "../../MainServices/getPosts";
 
 const initialValues = {
 	AuctionAmount: "",
@@ -65,7 +67,7 @@ export const CheckOut = ({ notify }) => {
             console.log("Not EW");
         }
     }
-    const HandleEwPayment = (usedPhoneTest)=>{
+    const HandleEwPayment = async (usedPhoneTest)=>{
         const storeid = 68;
         const usedPhone = usedPhoneTest;
         const amount = AuctionData.EnterPrice + AuctionData.EnterPrice * 0.25;
@@ -74,26 +76,12 @@ export const CheckOut = ({ notify }) => {
         const lang="en";
         const email = SessionData.userData.email
         console.log(email);
-        console.log(`https://sms.5brahost.com/api/payment_link_check?phone=${usedPhone}&amount=${amount}&user_name=${email}&store_id=${storeid}&lang=${lang}`);
-        fetch(`https://sms.5brahost.com/api/payment_link_check?phone=${usedPhone}&amount=${amount}&user_name=${email}&store_id=${storeid}&lang=${lang}`, { method: 'GET', redirect: 'follow' })
-        .then(response => console.log(response.json()))
-        
-        .then(result => {
-            let serverMsg =result['message'];
-            if(serverMsg == "<div style='text-align: right' class='alert alert-danger'>معلومات غير متطابقة. حاول مرة أخرى!</div>"){
-                setPaymentMsg("Transaction Not True , If You Pay Try Again Within 1 minute");
-            }
-            let payMsg = paymentMsg
-            if (payMsg == "Successful Transaction, Added") {
-                setTimeout(() => {
-                    navigate("/")
-                    notify(`You Joined Auction Successfuly`,"Success")
-                }, 8000);
-            }
-        })
-        .catch(error => {
-            setPaymentMsg("Error occurred while processing your request. Try Later")
-        });
+        const number = "01062697154"
+        const user = "Yossif"
+        const info = "Test"
+        const res = await getpayData(amount)
+        console.log(res);
+     
     }
 	return (
 		<Formik

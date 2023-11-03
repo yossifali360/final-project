@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
-import { BsBagHeart } from "react-icons/Bs";
+import { BsBagHeart } from 'react-icons/bs';
 import "./Nav.css";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../rtc/slices/authSlice";
