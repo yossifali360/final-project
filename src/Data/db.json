@@ -1,34 +1,51 @@
 {
   "users": [
     {
-      "name": "aaa",
+      "name": "Yossif Ali",
       "email": "yossifali149@gmail.com",
       "password": "123456789",
-      "Role": "User",
+      "Role": "Admin",
       "id": 1,
       "favCart": [
         {
-          "id": 4,
-          "header": "House B7-16 Crossways",
-          "text": "House B7-16, The Castle, Crossways Farm Village, 6375, ZA",
-          "MainImg": "./assets/img4.png",
-          "iframe": "https://my.matterport.com/show/?m=RiAr3yWgjRj"
-        },
-        {
-          "id": 2,
-          "header": "House B12-9 Crossways",
-          "text": "House B12-9 Farmstead Crescent, North Rocks, Crossways Farm Village, Eastern Cape 6375 South Africa",
-          "MainImg": "./assets/img2.png",
-          "iframe": "https://my.matterport.com/show/?m=FDW8uc9THYi"
-        },
-        {
-          "id": 6,
-          "header": "Three bedroom house for rent",
-          "text": "Sarafovo, Burgas, Bulgaria",
-          "MainImg": "./assets/img6.png",
-          "iframe": "https://my.matterport.com/show/?m=oxQMvzJYVtk"
+          "id": 5,
+          "header": "Cleland House, John Islip Street, Westminster SW1P",
+          "text": "Cleland House, John Islip St, Westminster, SW1P 4FF, UK",
+          "MainImg": "./assets/img5.png",
+          "iframe": "https://my.matterport.com/show/?m=e4zXsfaoRY3"
         }
       ],
+      "HisAuctions": {
+        "id": 3,
+        "NameOfCurrentWinner": "1",
+        "EnterPrice": 9,
+        "title": "For Test Payment",
+        "desc": "3 Sale: Christie's, London, 18 March 1994, lot 178 (as The Arnaut Warrior)\nAcquired from the above by the present owner\n\nArnauts, or bashi-bazouks, were irregulars in the Ottoman army recruited in Serbia and Albania, then part of the Ottoman empire. The strain on the Ottoman feudal system caused by the Empire's wide expanse required heavier reliance on irregular soldiers. They were armed and maintained by the government, but did not receive pay and did not wear uniforms or distinctive badges, preferring to dress in their own distinctive local costume comprising a red tunic and white kilt. Because not formally trained, they could not serve in major military operations but were useful for other tasks such as reconnaissance and outpost duty.\n\nJoanowitch studied at the Vienna Academy under Karl Leopold Müller. His patrons included King Alexander of Serbia. He exhibited in Vienna, Munich, and Berlin, where his meticulously observed Montenegrin and Albanian subjects, particularly of warriors and bashi-bazouks, met with international acclaim, prized by English and American collectors alike.",
+        "MainImg": "https://p1.liveauctioneers.com/246/305364/163097226_4_x.jpg?quality=80&version=1697030425",
+        "images": [
+          "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
+          "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
+          "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg"
+        ],
+        "HisPrice": "400000"
+      }
+    },
+    {
+      "name": "Ahmed Mohamed",
+      "email": "ahmedmohamed@gmail.com",
+      "password": "123456789",
+      "Role": "Member",
+      "id": 2,
+      "favCart": [],
+      "HisAuctions": []
+    },
+    {
+      "name": "Mohamed Samy",
+      "email": "mohamedsamy@gmail.com",
+      "password": "123456789",
+      "Role": "Partner",
+      "id": 3,
+      "favCart": [],
       "HisAuctions": []
     }
   ],
@@ -66,15 +83,6 @@
         "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
       ]
-    },
-    {
-      "header": "AAAAAAAAAAAAA",
-      "text": "AAAAAAAAAAAAA",
-      "images": [
-        "data:image/jpeg;base64,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",
-        "data:image/jpeg;base64,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"
-      ],
-      "id": 4
     }
   ],
   "Promotions": [
@@ -172,13 +180,23 @@
       "Email": "gvghvgh@wrfr.wr",
       "ForgetCode": 498651,
       "id": 2
+    },
+    {
+      "Email": "yossifali0127@gmail.com",
+      "ForgetCode": 618782,
+      "id": 8
+    },
+    {
+      "Email": "yossifali149@gmail.com",
+      "ForgetCode": 209904,
+      "id": 9
     }
   ],
   "Auctions": [
     {
       "id": 1,
-      "CurrentPrice": 500,
-      "NameOfCurrentWinner": "",
+      "CurrentPrice": 123456,
+      "NameOfCurrentWinner": "1",
       "EnterPrice": 100,
       "title": "A Resting Bashi-Bazouk",
       "desc": "Sale: Christie's, London, 18 March 1994, lot 178 (as The Arnaut Warrior)\nAcquired from the above by the present owner\n\nArnauts, or bashi-bazouks, were irregulars in the Ottoman army recruited in Serbia and Albania, then part of the Ottoman empire. The strain on the Ottoman feudal system caused by the Empire's wide expanse required heavier reliance on irregular soldiers. They were armed and maintained by the government, but did not receive pay and did not wear uniforms or distinctive badges, preferring to dress in their own distinctive local costume comprising a red tunic and white kilt. Because not formally trained, they could not serve in major military operations but were useful for other tasks such as reconnaissance and outpost duty.\n\nJoanowitch studied at the Vienna Academy under Karl Leopold Müller. His patrons included King Alexander of Serbia. He exhibited in Vienna, Munich, and Berlin, where his meticulously observed Montenegrin and Albanian subjects, particularly of warriors and bashi-bazouks, met with international acclaim, prized by English and American collectors alike.",
@@ -193,7 +211,7 @@
     {
       "id": 2,
       "CurrentPrice": 5000000,
-      "NameOfCurrentWinner": "",
+      "NameOfCurrentWinner": "2",
       "EnterPrice": 100000,
       "title": "2 A Resting Bashi-Bazouk",
       "desc": "2 Sale: Christie's, London, 18 March 1994, lot 178 (as The Arnaut Warrior)\nAcquired from the above by the present owner\n\nArnauts, or bashi-bazouks, were irregulars in the Ottoman army recruited in Serbia and Albania, then part of the Ottoman empire. The strain on the Ottoman feudal system caused by the Empire's wide expanse required heavier reliance on irregular soldiers. They were armed and maintained by the government, but did not receive pay and did not wear uniforms or distinctive badges, preferring to dress in their own distinctive local costume comprising a red tunic and white kilt. Because not formally trained, they could not serve in major military operations but were useful for other tasks such as reconnaissance and outpost duty.\n\nJoanowitch studied at the Vienna Academy under Karl Leopold Müller. His patrons included King Alexander of Serbia. He exhibited in Vienna, Munich, and Berlin, where his meticulously observed Montenegrin and Albanian subjects, particularly of warriors and bashi-bazouks, met with international acclaim, prized by English and American collectors alike.",
@@ -207,11 +225,11 @@
     },
     {
       "id": 3,
-      "CurrentPrice": 1,
-      "NameOfCurrentWinner": "",
-      "EnterPrice": 4,
+      "CurrentPrice": "400000",
+      "NameOfCurrentWinner": "1",
+      "EnterPrice": 9,
       "title": "For Test Payment",
-      "desc": "2 Sale: Christie's, London, 18 March 1994, lot 178 (as The Arnaut Warrior)\nAcquired from the above by the present owner\n\nArnauts, or bashi-bazouks, were irregulars in the Ottoman army recruited in Serbia and Albania, then part of the Ottoman empire. The strain on the Ottoman feudal system caused by the Empire's wide expanse required heavier reliance on irregular soldiers. They were armed and maintained by the government, but did not receive pay and did not wear uniforms or distinctive badges, preferring to dress in their own distinctive local costume comprising a red tunic and white kilt. Because not formally trained, they could not serve in major military operations but were useful for other tasks such as reconnaissance and outpost duty.\n\nJoanowitch studied at the Vienna Academy under Karl Leopold Müller. His patrons included King Alexander of Serbia. He exhibited in Vienna, Munich, and Berlin, where his meticulously observed Montenegrin and Albanian subjects, particularly of warriors and bashi-bazouks, met with international acclaim, prized by English and American collectors alike.",
+      "desc": "3 Sale: Christie's, London, 18 March 1994, lot 178 (as The Arnaut Warrior)\nAcquired from the above by the present owner\n\nArnauts, or bashi-bazouks, were irregulars in the Ottoman army recruited in Serbia and Albania, then part of the Ottoman empire. The strain on the Ottoman feudal system caused by the Empire's wide expanse required heavier reliance on irregular soldiers. They were armed and maintained by the government, but did not receive pay and did not wear uniforms or distinctive badges, preferring to dress in their own distinctive local costume comprising a red tunic and white kilt. Because not formally trained, they could not serve in major military operations but were useful for other tasks such as reconnaissance and outpost duty.\n\nJoanowitch studied at the Vienna Academy under Karl Leopold Müller. His patrons included King Alexander of Serbia. He exhibited in Vienna, Munich, and Berlin, where his meticulously observed Montenegrin and Albanian subjects, particularly of warriors and bashi-bazouks, met with international acclaim, prized by English and American collectors alike.",
       "MainImg": "https://p1.liveauctioneers.com/246/305364/163097226_4_x.jpg?quality=80&version=1697030425",
       "images": [
         "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
@@ -219,5 +237,87 @@
         "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg"
       ]
     }
+  ],
+  "Payments": [
+    {
+      "date": "2023-11-06 18:57:01",
+      "payment_id": 39683,
+      "user": "1",
+      "amount": "36438646",
+      "AuctionID": "3",
+      "id": 1
+    },
+    {
+      "date": "2023-11-07 18:30:47",
+      "payment_id": 33699,
+      "user": "1",
+      "amount": "400000",
+      "AuctionID": "3",
+      "id": 2
+    }
+  ],
+  "Session": {
+    "name": "Mohamed Samy3",
+    "email": "mohamedsamy@gmail.com",
+    "password": "123456789",
+    "Role": "Partner",
+    "id": 3,
+    "favCart": [],
+    "HisAuctions": []
+  },
+  "Appointments": [
+    [
+      {
+        "Id": 1,
+        "Subject": "Meeting with Client",
+        "StartTime": "2023-11-08T08:00:00.000Z",
+        "EndTime": "2023-11-08T09:00:00.000Z"
+      },
+      {
+        "Id": 2,
+        "Subject": "Team Standup",
+        "StartTime": "2023-11-08T12:00:00.000Z",
+        "EndTime": "2023-11-08T12:30:00.000Z"
+      },
+      {
+        "Subject": "ءش",
+        "Id": 3,
+        "StartTime": "2023-11-07T03:00:00.000Z",
+        "EndTime": "2023-11-07T03:30:00.000Z",
+        "IsAllDay": false
+      },
+      {
+        "Subject": "adawdwa",
+        "Id": 9,
+        "StartTime": "2023-11-09T23:30:00.000Z",
+        "EndTime": "2023-11-10T00:00:00.000Z",
+        "IsAllDay": false
+      },
+      {
+        "Subject": "SQs",
+        "Id": 10,
+        "StartTime": "2023-11-10T23:30:00.000Z",
+        "EndTime": "2023-11-11T00:00:00.000Z",
+        "IsAllDay": false
+      },
+      {
+        "Subject": "sQSqss",
+        "Id": 11,
+        "StartTime": "2023-11-10T01:00:00.000Z",
+        "EndTime": "2023-11-10T01:30:00.000Z",
+        "IsAllDay": false
+      },
+      {
+        "Subject": "yossiffffffffffffff",
+        "Id": 5,
+        "StartTime": "2023-11-08T00:00:00.000Z",
+        "EndTime": "2023-11-08T00:30:00.000Z",
+        "IsAllDay": false,
+        "Guid": "3afe73ac-91b9-9ce5-0923-ba9be66b9857",
+        "StartTimezone": null,
+        "EndTimezone": null,
+        "RecurrenceRule": null
+      }
+    ]
   ]
 }

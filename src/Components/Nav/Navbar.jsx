@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
-import { BsBagHeart } from 'react-icons/bs';
+import { BsBagHeart } from "react-icons/bs";
 import "./Nav.css";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../rtc/slices/authSlice";
@@ -12,7 +12,7 @@ import { useRef } from "react";
 import { FavCardDiv } from "../FavCard/FavCardDiv";
 import { removeAllItems } from "../../rtc/slices/FavCartSlice";
 
-export const Navbar = () => {
+export const Navbar = ({ notify, SessionData }) => {
 	const isAuth = useSelector((state) => state.authReducer.isAuth);
 	const [isCollapsed, setIsCollapsed] = useState(false);
 	const [userDropDown, setuserDropDown] = useState(false);
@@ -34,12 +34,13 @@ export const Navbar = () => {
 		} else {
 			document.documentElement.classList.remove("dark");
 		}
+		settheme(localStorage.getItem("theme") ?? "light");
 	});
-	const SessionData = JSON.parse(localStorage.getItem("Session"));
+
 	const handleMode = () => {
 		settheme(theme === "dark" ? "light" : "dark");
+		localStorage.setItem("theme", theme === "dark" ? "light" : "dark");
 	};
-
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	const toggleDrawer = () => {
 		setIsDrawerOpen(!isDrawerOpen);
@@ -54,7 +55,8 @@ export const Navbar = () => {
 		window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 	};
 	const UserRef = useRef();
-
+	const first = useRef();
+	console.log(first);
 	useEffect(() => {
 		if (!UserRef || !UserRef.current) return;
 		function closeOptions(e) {
@@ -76,20 +78,25 @@ export const Navbar = () => {
 
 	const optionsRef = useRef();
 	const closeBtn = useRef();
-
 	useEffect(() => {
 		if (!optionsRef || !optionsRef.current) return;
 		function closeOptions(e) {
 			if (
-				e.target != optionsRef.current &&
-				!optionsRef.current.contains(e.target)
+				(e.target == closeBtn.current ||
+				closeBtn.current.contains(e.target))
 			) {
-				console.log(e.target);
 				setIsDrawerOpen(false);
 			} else {
-				console.log("s");
-				console.log(e.target);
-				setIsDrawerOpen(true);
+				if (
+					e.target != optionsRef.current &&
+					!optionsRef.current.contains(e.target)
+				) {
+					console.log(e.target);
+					setIsDrawerOpen(false);
+				} else {
+					console.log(e.target);
+					setIsDrawerOpen(true);
+				}
 			}
 		}
 		document.addEventListener("click", closeOptions);
@@ -103,7 +110,7 @@ export const Navbar = () => {
 		dispatch(removeAllItems());
 	};
 	return (
-		<div className="z-50 sticky top-0">
+		<div className=" z-50 sticky top-0">
 			<svg
 				onClick={toTop}
 				className="ArrowUp cursor-pointer"
@@ -139,14 +146,14 @@ export const Navbar = () => {
 				/>
 			</svg>
 			<nav className="bg-white border-gray-200 dark:bg-zinc-950">
-				<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+				<div className=" flex flex-wrap items-center justify-between mx-auto p-4">
 					<a href="#" className="flex items-center">
 						<img
 							src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaAPTv_HqWt1CyNfRw2pEc3zaOZZZOarMb72r20bdRizIXaUmZTJJqmUFAnTYtO3pXCf9tRl5iQ8xMjNpoETSIa6_sIsGg=w1920-h923"
 							className="h-11 mr-3"
 							alt="Flowbite Logo"
 						/>
-						<span className="self-center text-2xl font-bold whitespace-nowrap dark:text-white">
+						<span className="self-center text-md md:text-2xl font-bold whitespace-nowrap dark:text-white">
 							Elite{" "}
 							<span className="text-emerald-500	">Estates</span>
 						</span>
@@ -168,7 +175,7 @@ export const Navbar = () => {
 							</div>
 							<div
 								id="drawer-right-example"
-								className={`shadow-2xl fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform ${
+								className={`shadow-2xl fixed top-0 right-0 z-40 w-full md:w-auto h-screen p-4 overflow-y-auto transition-transform ${
 									isDrawerOpen
 										? "translate-x-0"
 										: "translate-x-full"
@@ -214,18 +221,23 @@ export const Navbar = () => {
 											Your Items
 										</h2>
 									</div>
-									<div className="FavCart overflow-x-hidden overflow-y-auto">
-										{cartItems && cartItems.length >= 1
-											? cartItems.map((ele, index) => {
-													return (
-														<div key={ele.id}>
-															<FavCardDiv
-																cartItem={ele}
-															/>
-														</div>
-													);
-											  })
-											: null}
+									<div className="FavCart relative overflow-x-hidden overflow-y-auto">
+										{cartItems && cartItems.length >= 1 ? (
+											cartItems.map((ele, index) => {
+												return (
+													<div key={ele.id}>
+														<FavCardDiv
+															first={first}
+															cartItem={ele}
+														/>
+													</div>
+												);
+											})
+										) : (
+											<h3 className="text-3xl text-gray-700 text-center top-1/3 w-full left-1/2 -translate-x-1/2 absolute">
+												Your Cart Is Empty !
+											</h3>
+										)}
 									</div>
 									{/* <div className="flex flex-col divide-y divide-gray-200">
 					</div> */}
@@ -281,17 +293,26 @@ export const Navbar = () => {
 										aria-labelledby="user-menu-button"
 									>
 										<li>
+											{console.log(
+												SessionData.userData.Role
+											)}
 											{SessionData.userData.Role ==
 											"Admin" ? (
-												<button className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+												<Link
+													to={"/Dashboard"}
+													className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+												>
 													Dashboard
-												</button>
+												</Link>
 											) : null}
 										</li>
 										<li>
-											<button className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+											<Link
+												to={"/Settings"}
+												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+											>
 												Settings
-											</button>
+											</Link>
 										</li>
 										<li>
 											{SessionData.userData.Role ==
@@ -303,9 +324,13 @@ export const Navbar = () => {
 										</li>
 										<li>
 											<button
-												onClick={() =>
-													dispatch(logout())
-												}
+												onClick={() => {
+													dispatch(logout());
+													notify(
+														`You Logout Successfuly!`,
+														"Success"
+													);
+												}}
 												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
 											>
 												Logout
@@ -399,14 +424,6 @@ export const Navbar = () => {
 									aria-current="page"
 								>
 									Home
-								</NavLink>
-							</li>
-							<li>
-								<NavLink
-									to={"/About"}
-									className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-emerald-500	 md:p-0 dark:text-white md:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-								>
-									About
 								</NavLink>
 							</li>
 							<li>

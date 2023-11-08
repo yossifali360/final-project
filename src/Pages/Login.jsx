@@ -9,7 +9,7 @@ const initialValues = {
 	email: "",
 	password: "",
 };
-export const Login = ({notify}) => {
+export const Login = ({notify,setSessionData}) => {
     const users = useSelector((state) => state.authReducer.users)
 
 	const dispatch = useDispatch();
@@ -22,6 +22,8 @@ export const Login = ({notify}) => {
 			dispatch(login(userObj))
 			navigate("/")
             resetForm();
+			let LoginData = JSON.parse(localStorage.getItem("Session")) ?? [];
+			setSessionData(LoginData)
         }else{
 			notify(`Email or Password is incorrect`,"Error")
  		}

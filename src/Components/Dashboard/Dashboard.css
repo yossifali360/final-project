@@ -1,0 +1,30 @@
+table{
+    overflow-x:auto
+}
+.tab{
+    margin-left: 15px;
+}
+.mainTabs{
+    width: 50px;
+    overflow: hidden;
+    transition: .5s;
+}
+.mainTabs:hover{
+    width: 30%;
+}
+.w80PX{
+    width: 80px;
+}
+.dashPostImg{
+    width: 80px;
+    height: 100%;
+}
+.tabText{
+    color: white;
+}
+.active-text{
+    @apply text-emerald-500
+}
+.adsImg{
+    width: 150px;
+}

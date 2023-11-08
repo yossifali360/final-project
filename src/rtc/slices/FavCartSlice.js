@@ -36,9 +36,9 @@ reducers:{
             state.favCart.push({...action.payload})
         }
     },
-    removeItem : (state , action) =>{
-        state.favCart = state.favCart.filter(ele => ele.id != action.payload)
-    },
+    removeItem: (state, action) => {
+        state.favCart = state.favCart.filter(ele => ele.id != action.payload);
+      },      
     removeAllItems : (state) =>{
         state.favCart = [];
     }
@@ -51,5 +51,5 @@ extraReducers:(builder) =>{
 })
 const favCartReducer = favCartSlice.reducer;
 
-export const {removeAllItems , addItem} = favCartSlice.actions;
+export const {removeAllItems , addItem , removeItem} = favCartSlice.actions;
 export default favCartReducer;

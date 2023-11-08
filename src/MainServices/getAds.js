@@ -7,3 +7,8 @@ export const postAd = async (postAd) => {
 	const data = await myAxios.post(`/Ads`, postAd);
 	return data.data;
 };
+
+export const deleteAdData = async (id) => {
+	await myAxios.delete(`/Ads/${id}`);
+	return true;
+};

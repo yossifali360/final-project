@@ -4,6 +4,16 @@ export const getAuctions = async () => {
 	return data.data;
 };
 
+export const deleteAuctionData = async (id) => {
+	await myAxios.delete(`/Auctions/${id}`);
+	return true;
+};
+
+export const searchAuctions = async (text) => {
+	const data = await myAxios(`/Auctions?q=${text}`);
+	return data.data;
+};
+
 export const getSingleAuctions = async (id) => {
 	const data = await myAxios(`/Auctions/${id}`);
 	return data.data;

@@ -11,7 +11,9 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, updateFavCart } from "../../rtc/slices/FavCartSlice";
 
-export const LatestProjects = () => {
+export const LatestProjects = ({notify}) => {
+	const Auth = useSelector((state) => state.authReducer.isAuth);
+
 	// All Projects
 	const [projects, setprojects] = useState([]);
 
@@ -25,15 +27,18 @@ export const LatestProjects = () => {
 		setFavIcons(Array(projects.length).fill(false));
 	}, []);
 
-	const userId = useSelector((state) => state.authReducer.userData);
-	console.log(userId);
+	
 	const dispatch = useDispatch();
 
 	const toggleFavorite = (index) => {
-		const newFavIcons = [...favIcons];
-		newFavIcons[index] = !newFavIcons[index];
-		setFavIcons(newFavIcons);
-		dispatch(addItem(projects[index]));
+		if (Auth){
+			const newFavIcons = [...favIcons];
+			newFavIcons[index] = !newFavIcons[index];
+			setFavIcons(newFavIcons);
+			dispatch(addItem(projects[index]));
+		}else{
+			notify(`Please Login First`, "Error");
+		}
 	};
 
 	const cartItems = useSelector((state) => state.favCartReducer.favCart);

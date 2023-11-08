@@ -10,6 +10,11 @@ export const patchUsers = async (id) => {
     return data.data;
 }
 
+export const deleteUserData = async (id) => {
+	await myAxios.delete(`/users/${id}`);
+	return true;
+};
+
 export const getUsersFavCart = async (id) =>{
     const data = await myAxios(`/users/${id}`)
     return data.data.favCart;

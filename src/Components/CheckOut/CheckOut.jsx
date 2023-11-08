@@ -4,7 +4,11 @@ import { getSingleAuctions } from "../../MainServices/getAuctions";
 import { Formik } from "formik";
 import { CheckOutSchema } from "../../Schemas/CheckOutSchema";
 import { myAxiosPay } from "../../MainServices/api";
-import { getpayData } from "../../MainServices/getPosts";
+import { Payments, confirmPayData, getpayData, postHisAuctions, updateAuctionData } from "../../MainServices/getPosts";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import { useDispatch } from "react-redux";
+
 
 const initialValues = {
 	AuctionAmount: "",
@@ -15,16 +19,17 @@ const initialValues = {
 	phoneNumber: "",
 	State: "",
 	zipCode: "",
-    usedPhone:"",
+	usedPhone: "",
 };
 
-export const CheckOut = ({ notify }) => {
+export const CheckOut = ({ notify , SessionData }) => {
+	const MySwal = withReactContent(Swal);
 	const location = useLocation();
 	const searchParams = new URLSearchParams(location.search);
 	const AuctionID = searchParams.get("AuctionId");
-    const SessionData = JSON.parse(localStorage.getItem('Session'));
+	const UserId = searchParams.get("UserId");
 	const [AuctionData, setAuctionData] = useState([]);
-    const navigate = useNavigate();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const waitForData = async () => {
@@ -39,49 +44,107 @@ export const CheckOut = ({ notify }) => {
 		delete Data.name;
 		console.log(Data);
 	}
+	const dispatch = useDispatch()
+	const [submitBtnTxt, setSubmitBtnTxt] = useState("CheckOut");
 	const [isCardChecked, setCardChecked] = useState(false);
 	const [isEWChecked, setIsEWChecked] = useState(false);
 	const [paymentMsg, setPaymentMsg] = useState("");
-    const [selectedOption, setSelectedOption] = useState("");
+	const [successMsg, setSuccessMsg] = useState("");
+	const [selectedOption, setSelectedOption] = useState("");
+	const [isPaymentSent, setPaymentSent] = useState("false");
 	const handleCardCheck = () => {
 		setCardChecked(!isCardChecked);
-        setIsEWChecked(false);
-        setSelectedOption("MasterCard")
+		setIsEWChecked(false);
+		setSelectedOption("MasterCard");
+        setSubmitBtnTxt("CheckOut")
 	};
 
 	const handleEWCheck = () => {
 		setIsEWChecked(!isEWChecked);
-        setCardChecked(false);
-        setSelectedOption("ElectronicWallet")
+        setSubmitBtnTxt("Pay")
+		setCardChecked(false);
+		setSelectedOption("ElectronicWallet");
 	};
 
-
-
-
-    const handleFormSubmit = (e,values)=>{
-        e.preventDefault();
-        if(isEWChecked == true){
-            let usedPhoneTest = values.usedPhone
-            HandleEwPayment(usedPhoneTest)
-        }else{
-            console.log("Not EW");
+	const handleFormSubmit = (e, values) => {
+		localStorage.setItem("values",JSON.stringify(values))
+		e.preventDefault();
+		if (isEWChecked == true) {
+			let usedPhoneTest = values.usedPhone;
+			HandleEwPayment(usedPhoneTest);
+		} else {
+			console.log("Not EW");
+		}
+	};
+	const HandleEwPayment = async (usedPhoneTest) => {
+		const phoneNumber = usedPhoneTest;
+		const amount = AuctionData.EnterPrice + AuctionData.EnterPrice * 0.25;
+		const user = SessionData.userData.email;
+		const res = await getpayData(amount,phoneNumber,user);
+		if (res.code == 200) {
+			setSuccessMsg("Request Sent , Please Confirm The Transaction");
+			let payment_id = res.payment_id;
+            localStorage.setItem("payment_id",JSON.stringify(payment_id))
+            setPaymentSent(true)
+		}
+	};
+    const HandleCheckPayment = async ()=>{
+		const payment_id = JSON.parse(localStorage.getItem('payment_id')) ?? [];
+		const values = JSON.parse(localStorage.getItem('values')) ?? [];
+        const confirmRes = await confirmPayData(payment_id);
+		let userValuesData = await getSingleAuctions(AuctionID)
+		delete userValuesData.CurrentPrice
+		let HisAuctions = {
+			...userValuesData,
+			HisPrice: values.AuctionAmount
+		}
+		dispatch(postHisAuctions({ id: UserId, HisAuctions: HisAuctions}));
+		let Data = await getSingleAuctions(AuctionID)
+		let userPrice = values.AuctionAmount
+		if(userPrice > Data.CurrentPrice){
+			dispatch(updateAuctionData({ AuctionID: AuctionID, CurrentPrice: userPrice, NameOfCurrentWinner: UserId }));
+		}else{
+			dispatch(updateAuctionData({ AuctionID: AuctionID, CurrentPrice: values.AuctionAmount, NameOfCurrentWinner: UserId }));
+		}
+		setSuccessMsg("")
+        if (confirmRes.code == 400) {
+            setPaymentMsg("Not Confirmed , Please Confirm The Transaction")
         }
-    }
-    const HandleEwPayment = async (usedPhoneTest)=>{
-        const storeid = 68;
-        const usedPhone = usedPhoneTest;
-        const amount = AuctionData.EnterPrice + AuctionData.EnterPrice * 0.25;
-        console.log(amount);
-        console.log(usedPhone);
-        const lang="en";
-        const email = SessionData.userData.email
-        console.log(email);
-        const number = "01062697154"
-        const user = "Yossif"
-        const info = "Test"
-        const res = await getpayData(amount)
-        console.log(res);
-     
+        if ( confirmRes.code == 200) {
+			const currentDate = new Date();
+			const year = currentDate.getFullYear();
+			const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+			const day = String(currentDate.getDate()).padStart(2, '0');
+			const hours = String(currentDate.getHours()).padStart(2, '0');
+			const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+			const seconds = String(currentDate.getSeconds()).padStart(2, '0');
+			
+			const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+			console.log(formattedDate);
+			
+			let paymentData = {
+				date: formattedDate,
+				payment_id : payment_id,
+				user : UserId,
+				amount : values.AuctionAmount,
+				AuctionID: AuctionID
+			};
+			async function postPayment(paymentData) {
+				await Payments(paymentData);
+			}
+			postPayment(paymentData);
+            setPaymentMsg("");
+            MySwal.fire({
+                title: <strong>Transaction Confirmed Successfuly</strong>,
+                html: <i>You Entered The Auction!</i>,
+                icon: "success",
+                showConfirmButton: true,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate("/SingleAuctions?id=3");
+                }
+            });
+        }
     }
 	return (
 		<Formik
@@ -257,7 +320,10 @@ export const CheckOut = ({ notify }) => {
 													id="MasterCard"
 													name="MasterCard"
 													value="MasterCard"
-                                                    checked={selectedOption === "MasterCard"}
+													checked={
+														selectedOption ===
+														"MasterCard"
+													}
 												/>
 												<label htmlFor="MasterCard">
 													MasterCard
@@ -271,7 +337,10 @@ export const CheckOut = ({ notify }) => {
 													id="ElectronicWallet"
 													name="ElectronicWallet"
 													value="ElectronicWallet"
-                                                    checked={selectedOption === "ElectronicWallet"}
+													checked={
+														selectedOption ===
+														"ElectronicWallet"
+													}
 												/>
 												<label htmlFor="ElectronicWallet">
 													Electronic wallet
@@ -279,7 +348,11 @@ export const CheckOut = ({ notify }) => {
 											</div>
 										</div>
 									</div>
-									<div className={`masterCardDiv ${isCardChecked ? "block" : "hidden"}`}>
+									<div
+										className={`masterCardDiv ${
+											isCardChecked ? "block" : "hidden"
+										}`}
+									>
 										<input
 											className="focus:outline-none dark:text-gray-400 dark:bg-transparent dark:placeholder-gray-400 focus:ring-2 focus:ring-emerald-500 px-2 border-b border-gray-200 leading-4 text-base placeholder-gray-600 pt-4 pb-3 w-full"
 											type="text"
@@ -302,27 +375,52 @@ export const CheckOut = ({ notify }) => {
 											</div>
 										</div>
 									</div>
-                                    <div className={`EwDiv w-full text-xl ${isEWChecked ? "block" : "hidden"}`}>
-                                        <h3 className="mb-3">Firstly You Need To Send "<span className="text-red-500">{(AuctionData.EnterPrice + AuctionData.EnterPrice *0.25).toLocaleString()}</span>" To This Number</h3>
-                                        <span className="bg-red-500 rounded-md text-white px-3 text-2xl">01062697154</span>
+									<div
+										className={`EwDiv w-full text-xl ${
+											isEWChecked ? "block" : "hidden"
+										}`}
+									>
+										<h3 className="mb-3">
+											Enter Your Phone Number To Pay "
+											<span className="text-red-500">
+												{(
+													AuctionData.EnterPrice +
+													AuctionData.EnterPrice *
+														0.25
+												).toLocaleString()}
+											</span>
+											" EGP
+										</h3>
 										<input
 											className="focus:outline-none dark:text-gray-400 dark:bg-transparent dark:placeholder-gray-400 focus:ring-2 focus:ring-emerald-500 px-2 border-b border-gray-200 leading-4 text-base placeholder-gray-600 pt-4 pb-3 w-full my-3 mt-5"
 											type="text"
-                                            name="usedPhone"
-                                            value={values.usedPhone}
-                                            onBlur={handleBlur}
-                                            onChange={handleChange}
-											placeholder="Enter The Number You Used"
+											name="usedPhone"
+											value={values.usedPhone}
+											onBlur={handleBlur}
+											onChange={handleChange}
+											placeholder="Enter Your Phone Number"
 										/>
-                                        <span className="text-red-500">{paymentMsg}</span>
+										<span className="text-red-500">
+											{paymentMsg}
+										</span>
+										<span className="text-green-500">
+											{successMsg}
+										</span>
 									</div>
+                                    {isPaymentSent == true ?<button
+									type="button"
+                                    onClick={(e) => HandleCheckPayment(e,values)}
+									className="focus:outline-none dark:bg-gray-800 dark:text-white focus:ring-emerald-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-black py-4 w-full md:w-4/12 lg:w-full text-white bg-gray-800"
+								>
+									Check Payment
+								</button> : null}
 								</div>
 
 								<button
 									type="submit"
 									className="focus:outline-none dark:bg-gray-800 dark:text-white focus:ring-emerald-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-black py-4 w-full md:w-4/12 lg:w-full text-white bg-gray-800"
 								>
-									Check Out
+									{submitBtnTxt}
 								</button>
 							</div>
 

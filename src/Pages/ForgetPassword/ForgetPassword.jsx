@@ -38,7 +38,7 @@ export const ForgetPassword = ({notify}) => {
 			}
 		}
 		sendCode(userData)
-        emailjs.sendForm('service_2slcdjb', 'template_m8tvur5', form.current, 'r-obV8PRJZfeUhbeo')
+        emailjs.sendForm('service_sg007n9', 'template_yyyayfq', form.current, '2ahFmZ5gQoHSoCL0m')
           .then((result) => {
               console.log(result.text);
           }, (error) => {

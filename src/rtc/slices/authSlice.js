@@ -21,6 +21,15 @@ export const updateUserPassword = createAsyncThunk("auth/updateUserPassword" , a
     body: JSON.stringify({password : data.password})
 })
 })
+export const updateUserInfo = createAsyncThunk("auth/updateUserPassword" , async (data) =>{
+    await fetch ('http://localhost:3000/users/' +data.id , {
+    method: 'PATCH',
+    headers:{
+        'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify({email : data.email , name : data.name})
+})
+})
 const initialState ={
     users : [],
     ...loginData
@@ -35,7 +44,6 @@ reducers:{
     login : (state,action) =>{
         state.isAuth = true;
         const data = action.payload;
-        // delete data.favCart;
         state.userData = action.payload
         localStorage.setItem("Session",JSON.stringify({isAuth: true , userData:data}))
     },
