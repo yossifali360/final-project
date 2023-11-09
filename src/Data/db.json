@@ -4,9 +4,17 @@
       "name": "Yossif Ali",
       "email": "yossifali149@gmail.com",
       "password": "123456789",
-      "Role": "Member",
+      "Role": "Admin",
       "id": 1,
-      "favCart": [],
+      "favCart": [
+        {
+          "id": 8,
+          "header": "Coombe Lands, Wittersham, Tenterden TN30 7NU, UK",
+          "text": "Pool House at 5 bed detached home in Wittersham. ID2087. Distinctive Homes",
+          "MainImg": "./assets/img8.png",
+          "iframe": "https://my.matterport.com/show/?m=uvVtq8qEn1s"
+        }
+      ],
       "HisAuctions": {
         "id": 3,
         "NameOfCurrentWinner": "1",
@@ -226,33 +234,6 @@
         "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
         "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg"
       ]
-    },
-    {
-      "title": "dwd",
-      "desc": "qfefdadwdwad",
-      "NameOfCurrentWinner": "",
-      "EnterPrice": "1561561",
-      "CurrentPrice": "24234",
-      "images": [],
-      "id": 4
-    },
-    {
-      "title": "dwd",
-      "desc": "qfefdadwdwad",
-      "NameOfCurrentWinner": "",
-      "EnterPrice": "1561561",
-      "CurrentPrice": "24234",
-      "images": [],
-      "id": 5
-    },
-    {
-      "title": "dwd",
-      "desc": "qfefdadwdwad",
-      "NameOfCurrentWinner": "",
-      "EnterPrice": "1561561",
-      "CurrentPrice": "24234",
-      "images": [],
-      "id": 6
     }
   ],
   "Payments": [
