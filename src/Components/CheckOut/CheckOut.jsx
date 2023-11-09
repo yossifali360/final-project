@@ -310,7 +310,7 @@ export const CheckOut = ({ notify , SessionData }) => {
 										</div>
 									</div>
 									<div className="my-3">
-										<h3>Choose Payment Method</h3>
+										<h3 className="dark:text-white">Choose Payment Method</h3>
 										<div className="flex items-center gap-5 mt-5">
 											<div>
 												<input
@@ -325,7 +325,7 @@ export const CheckOut = ({ notify , SessionData }) => {
 														"MasterCard"
 													}
 												/>
-												<label htmlFor="MasterCard">
+												<label className="dark:text-white" htmlFor="MasterCard">
 													MasterCard
 												</label>
 											</div>
@@ -342,7 +342,7 @@ export const CheckOut = ({ notify , SessionData }) => {
 														"ElectronicWallet"
 													}
 												/>
-												<label htmlFor="ElectronicWallet">
+												<label className="dark:text-white" htmlFor="ElectronicWallet">
 													Electronic wallet
 												</label>
 											</div>
@@ -380,7 +380,7 @@ export const CheckOut = ({ notify , SessionData }) => {
 											isEWChecked ? "block" : "hidden"
 										}`}
 									>
-										<h3 className="mb-3">
+										<h3 className="mb-3 dark:text-white">
 											Enter Your Phone Number To Pay "
 											<span className="text-red-500">
 												{(
@@ -410,7 +410,7 @@ export const CheckOut = ({ notify , SessionData }) => {
                                     {isPaymentSent == true ?<button
 									type="button"
                                     onClick={(e) => HandleCheckPayment(e,values)}
-									className="focus:outline-none dark:bg-gray-800 dark:text-white focus:ring-emerald-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-black py-4 w-full md:w-4/12 lg:w-full text-white bg-gray-800"
+									className="focus:outline-none dark:bg-blue-500 dark:text-white focus:ring-emerald-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-black py-4 w-full md:w-4/12 lg:w-full text-white bg-gray-800"
 								>
 									Check Payment
 								</button> : null}
@@ -418,7 +418,7 @@ export const CheckOut = ({ notify , SessionData }) => {
 
 								<button
 									type="submit"
-									className="focus:outline-none dark:bg-gray-800 dark:text-white focus:ring-emerald-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-black py-4 w-full md:w-4/12 lg:w-full text-white bg-gray-800"
+									className="focus:outline-none dark:bg-blue-500 dark:text-white focus:ring-emerald-500 focus:ring-offset-2 mt-8 text-base font-medium focus:ring-2 focus:ring-ocus:ring-gray-800 leading-4 hover:bg-black py-4 w-full md:w-4/12 lg:w-full text-white bg-gray-800"
 								>
 									{submitBtnTxt}
 								</button>

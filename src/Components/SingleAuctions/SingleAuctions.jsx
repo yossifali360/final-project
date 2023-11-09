@@ -79,12 +79,12 @@ export const SingleAuctions = () => {
 					</div>
 
 					<div className="lg:col-span-2 lg:row-span-2 lg:row-end-2">
-						<h1 className="sm: text-2xl font-bold text-gray-900 sm:text-3xl">
+						<h1 className="sm: text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
 							{AuctionData.title}
 						</h1>
 
 						<div className="mt-5 flex items-center">
-							<div className="text-xl uppercase">
+							<div className="text-xl uppercase dark:text-white">
 								Current Price :{" "}
 								<span className="text-red-500">
 									{AuctionData &&
@@ -98,7 +98,7 @@ export const SingleAuctions = () => {
 
 						<div className="mt-10 space-y-4 border-t border-b py-8">
 							<div className="btns">
-								<h1 className="text-xl font-bold">
+								<h1 className="text-xl font-bold dark:text-white">
 									You Can Enter Auction By{" "}
 								</h1>
 								<span className="text-xl text-red-500">
@@ -107,13 +107,13 @@ export const SingleAuctions = () => {
 										? AuctionData.EnterPrice.toLocaleString()
 										: ""}
 								</span>
-								<span> EGP</span>
+								<span className="dark:text-white"> EGP</span>
 							</div>
 
 							<button
 								type="button"
 								onClick={handleEnterAuction}
-								className="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
+								className="inline-flex dark:bg-blue-500 items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
 							>
 								Enter Auction
 							</button>
@@ -122,13 +122,13 @@ export const SingleAuctions = () => {
 
 					<div className="lg:col-span-3">
 						<div className="border-b border-gray-300">
-							<h3 className="border-b-2 border-gray-900 py-4 font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800 text-3xl">
+							<h3 className="border-b-2 border-gray-900 dark:text-white py-4 font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800 text-3xl">
 								Description
 							</h3>
 						</div>
 
 						<div className="mt-8 flow-root sm:mt-12">
-							<p className="mt-4">
+							<p className="mt-4 dark:text-white">
 								Lorem ipsum dolor sit amet consectetur
 								adipisicing elit. Optio numquam enim facere.
 							</p>
