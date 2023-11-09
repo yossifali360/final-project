@@ -4,17 +4,9 @@
       "name": "Yossif Ali",
       "email": "yossifali149@gmail.com",
       "password": "123456789",
-      "Role": "Admin",
+      "Role": "Member",
       "id": 1,
-      "favCart": [
-        {
-          "id": 5,
-          "header": "Cleland House, John Islip Street, Westminster SW1P",
-          "text": "Cleland House, John Islip St, Westminster, SW1P 4FF, UK",
-          "MainImg": "./assets/img5.png",
-          "iframe": "https://my.matterport.com/show/?m=e4zXsfaoRY3"
-        }
-      ],
+      "favCart": [],
       "HisAuctions": {
         "id": 3,
         "NameOfCurrentWinner": "1",
@@ -27,7 +19,7 @@
           "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
           "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg"
         ],
-        "HisPrice": "400000"
+        "HisPrice": "5000000"
       }
     },
     {
@@ -83,17 +75,15 @@
         "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
       ]
+    },
+    {
+      "header": "dwdwwd",
+      "text": "dwdwdwdwdwdwdwd",
+      "images": [],
+      "id": 4
     }
   ],
   "Promotions": [
-    {
-      "id": 1,
-      "img": "./assets/promotion1.jpg"
-    },
-    {
-      "id": 2,
-      "img": "./assets/promotion2.jpg"
-    },
     {
       "id": 3,
       "img": "./assets/promotion3.jpg"
@@ -225,7 +215,7 @@
     },
     {
       "id": 3,
-      "CurrentPrice": "400000",
+      "CurrentPrice": "5000000",
       "NameOfCurrentWinner": "1",
       "EnterPrice": 9,
       "title": "For Test Payment",
@@ -236,6 +226,33 @@
         "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
         "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg"
       ]
+    },
+    {
+      "title": "dwd",
+      "desc": "qfefdadwdwad",
+      "NameOfCurrentWinner": "",
+      "EnterPrice": "1561561",
+      "CurrentPrice": "24234",
+      "images": [],
+      "id": 4
+    },
+    {
+      "title": "dwd",
+      "desc": "qfefdadwdwad",
+      "NameOfCurrentWinner": "",
+      "EnterPrice": "1561561",
+      "CurrentPrice": "24234",
+      "images": [],
+      "id": 5
+    },
+    {
+      "title": "dwd",
+      "desc": "qfefdadwdwad",
+      "NameOfCurrentWinner": "",
+      "EnterPrice": "1561561",
+      "CurrentPrice": "24234",
+      "images": [],
+      "id": 6
     }
   ],
   "Payments": [
@@ -254,6 +271,14 @@
       "amount": "400000",
       "AuctionID": "3",
       "id": 2
+    },
+    {
+      "date": "2023-11-08 20:07:45",
+      "payment_id": 29413,
+      "user": "1",
+      "amount": "5000000",
+      "AuctionID": "3",
+      "id": 3
     }
   ],
   "Session": {

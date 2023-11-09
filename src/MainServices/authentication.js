@@ -20,6 +20,11 @@ export const getUsersFavCart = async (id) =>{
     return data.data.favCart;
 }
 
+export const getUsersAuctions = async (id) =>{
+    const data = await myAxios(`/users/${id}`)
+    return data.data.HisAuctions;
+}
+
 export const register = async (userData) =>{
     const data = await myAxios.post(`/users`,userData)
     return data.data;

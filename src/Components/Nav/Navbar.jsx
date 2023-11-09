@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 import { BsBagHeart } from "react-icons/bs";
 import "./Nav.css";
@@ -24,6 +24,7 @@ export const Navbar = ({ notify, SessionData }) => {
 	};
 
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	// Dark And Ligh Mode
 	const [theme, settheme] = useState("light");
@@ -80,30 +81,31 @@ export const Navbar = ({ notify, SessionData }) => {
 	const closeBtn = useRef();
 	useEffect(() => {
 		if (!optionsRef || !optionsRef.current) return;
+
 		function closeOptions(e) {
 			if (
-				(e.target == closeBtn.current ||
-				closeBtn.current.contains(e.target))
+				e.target === closeBtn.current ||
+				closeBtn.current.contains(e.target) ||
+				e.target.closest(".navCartIcon") ||
+				e.target.closest(".FavCardDivClose")
+			) {
+				return;
+			}
+			if (
+				e.target !== optionsRef.current &&
+				!e.target.closest(".navCartIcon") &&
+				!e.target.closest(".FavCardDivClose")
 			) {
 				setIsDrawerOpen(false);
-			} else {
-				if (
-					e.target != optionsRef.current &&
-					!optionsRef.current.contains(e.target)
-				) {
-					console.log(e.target);
-					setIsDrawerOpen(false);
-				} else {
-					console.log(e.target);
-					setIsDrawerOpen(true);
-				}
 			}
 		}
+
 		document.addEventListener("click", closeOptions);
+
 		return () => {
 			document.removeEventListener("click", closeOptions);
 		};
-	}, []);
+	}, [optionsRef, closeBtn, setIsDrawerOpen]);
 
 	const cartItems = useSelector((state) => state.favCartReducer.favCart);
 	const handleRemoveCart = () => {
@@ -159,7 +161,7 @@ export const Navbar = ({ notify, SessionData }) => {
 						</span>
 					</a>
 					<div className="flex items-center md:order-2 relative">
-						<div ref={optionsRef}>
+						<div className="navCartIcon" ref={optionsRef}>
 							<div className="CartIcon relative">
 								<BsBagHeart
 									className="text-2xl mx-5 dark:text-white"
@@ -316,22 +318,23 @@ export const Navbar = ({ notify, SessionData }) => {
 										</li>
 										<li>
 											{SessionData.userData.Role ==
-											"User" ? (
-												<button className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+											"Member" ? (
+												<Link to={"AuctionsHistory"} className="w-full text-start block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
 													Auction History
-												</button>
+												</Link>
 											) : null}
 										</li>
 										<li>
 											<button
 												onClick={() => {
 													dispatch(logout());
+													navigate("/")
 													notify(
 														`You Logout Successfuly!`,
 														"Success"
 													);
 												}}
-												className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+												className="block w-full text-start px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
 											>
 												Logout
 											</button>
@@ -420,7 +423,7 @@ export const Navbar = ({ notify, SessionData }) => {
 								<link rel="stylesheet" href="" />
 								<NavLink
 									to={"/"}
-									className="block py-2 pl-3 pr-4 text-gray-900 rounded md:bg-transparent md::text-emerald-500 md:p-0 md:dark:text-white"
+									className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:bg-transparent md:hover:text-emerald-500 md:p-0 dark:text-white md:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
 									aria-current="page"
 								>
 									Home

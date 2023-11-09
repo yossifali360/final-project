@@ -9,9 +9,13 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, updateFavCart } from "../../rtc/slices/FavCartSlice";
+import {
+	addItem,
+	removeItem,
+	updateFavCart,
+} from "../../rtc/slices/FavCartSlice";
 
-export const LatestProjects = ({notify}) => {
+export const LatestProjects = ({ notify }) => {
 	const Auth = useSelector((state) => state.authReducer.isAuth);
 
 	// All Projects
@@ -27,16 +31,23 @@ export const LatestProjects = ({notify}) => {
 		setFavIcons(Array(projects.length).fill(false));
 	}, []);
 
-	
 	const dispatch = useDispatch();
 
 	const toggleFavorite = (index) => {
-		if (Auth){
+		if (Auth) {
 			const newFavIcons = [...favIcons];
-			newFavIcons[index] = !newFavIcons[index];
 			setFavIcons(newFavIcons);
-			dispatch(addItem(projects[index]));
-		}else{
+			newFavIcons[index] = !newFavIcons[index];
+			const selectedProject = projects[index];
+			const isAlreadyInCart = cartItems.some(
+				(item) => item.header === selectedProject.header
+			);
+			if (isAlreadyInCart) {
+				dispatch(removeItem(selectedProject.id));
+			} else {
+				dispatch(addItem(selectedProject));
+			}
+		} else {
 			notify(`Please Login First`, "Error");
 		}
 	};
@@ -50,7 +61,7 @@ export const LatestProjects = ({notify}) => {
 				<h3 className="text-center text-black dark:text-white text-4xl font-semibold my-3">
 					Our Latest Project
 				</h3>
-				<div className="line bg-black after:bg-black before:bgdark before:dark::bg-white dark:bg-white dark:after:bg-white dark:before:bg-white"></div>
+				<div className="line bg-black after:bg-black before:bg-black dark:bg-white dark:after:bg-white dark:before:bg-white"></div>
 				<Swiper
 					modules={[Navigation, Pagination]}
 					slidesPerView={1}
@@ -60,13 +71,19 @@ export const LatestProjects = ({notify}) => {
 				>
 					{projects.map((project, index) => {
 						return (
-							<SwiperSlide className="p-3" key={index}>
-								<div className="p-5 my-9 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
-									{cartItems.map((item)=>{(item.header)==project.header ? Hearticons[index] = true : console.log(Hearticons);})}
+							<SwiperSlide className="px-3 pt-1 mt-5" key={index}>
+								<div className="p-5 h-full flex flex-col justify-between bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
+									{cartItems.map((item) => {
+										item.header === project.header
+											? (Hearticons[index] = true)
+											: console.log(Hearticons);
+									})}
 									<img
 										src="./assets/HeartCarton.png"
 										className={`HeartCarton absolute ${
-											favIcons[index] || Hearticons[index]==true ? "show" : "hidden"
+											Hearticons[index] == true
+												? "show"
+												: "hidden"
 										}`}
 										alt="HeartCarton"
 									/>
@@ -107,13 +124,18 @@ export const LatestProjects = ({notify}) => {
 													icon={faEnvelope}
 												/>
 											</a>
+											{cartItems.map((item) => {
+												item.header === project.header
+													? (Hearticons[index] = true)
+													: console.log(Hearticons);
+											})}
 											<button
 												onClick={() => {
 													toggleFavorite(index);
 												}}
 												className="flex justify-center items-center px-3 w-1/6 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800 dark:bg-red-700 dark:hover:bg-red-800  duration-300"
 											>
-												{favIcons[index] ? (
+												{Hearticons[index] == true ? (
 													<AiFillHeart className="text-xl" />
 												) : (
 													<AiOutlineHeart className="text-xl" />

@@ -20,6 +20,6 @@ export const getSingleAuctions = async (id) => {
 };
 
 export const postAuctions = async (postData) => {
-	const data = await myAxios.post(`/posts`, postData);
+	const data = await myAxios.post(`/Auctions`, postData);
 	return data.data;
 };

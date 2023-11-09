@@ -12,6 +12,20 @@ export const OurPartners = () => {
     spaceBetween={50}
     slidesPerView={5}
     loop={true}
+	breakpoints={{
+		220: {
+		  slidesPerView: 1,
+		  spaceBetween: 20
+		},
+		480: {
+		  slidesPerView: 3,
+		  spaceBetween: 30
+		},
+		640: {
+		  slidesPerView: 4,
+		  spaceBetween: 40
+		}
+	  }}	  
     autoplay={{
       delay: 3000,
     }}

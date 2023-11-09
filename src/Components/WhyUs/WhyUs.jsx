@@ -9,8 +9,8 @@ export const WhyUs = () => {
 			<div className="hidden dark:block absolute mainGradient left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72	h-72"></div>
 			<div className="whyUs">
 				<div className="flex flex-col md:flex-row items-center justify-center">
-					<div className="left text-black dark:text-white text-center">
-						<div className="h-full flex flex-col gap-20">
+					<div className="left text-black dark:text-white text-center w-fit">
+						<div className="h-full flex flex-col gap-20 w-fit mt-11 md:mt-0">
 							<div>
 								<span className="text-3xl font-semibold numberFont">
 									37
@@ -33,8 +33,8 @@ export const WhyUs = () => {
 							alt="Egypt Map"
 						/>
 					</div>
-					<div className="right text-black dark:text-white text-center">
-						<div className="h-full flex flex-col gap-20">
+					<div className="right text-black dark:text-white text-center w-fit">
+						<div className="h-full flex flex-col gap-20 w-fit">
 							<div>
 								<span className="text-3xl font-semibold numberFont">
 									# 4 <br />

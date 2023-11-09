@@ -2,7 +2,10 @@ import React from "react";
 
 export const PaymentsDataDiv = ({PaymentsData}) => {
 	return (
-		<table className="w-full text-center border-separate border border-slate-400 my-5 text-black dark:text-white">
+		<table className="w-full relative text-center border-separate border border-slate-400 my-5 text-black dark:text-white">
+				<span className="hidden dark:block absolute mainGradient -top-24 left-0 w-44	h-44"></span>
+				<span className="hidden dark:block absolute mainGradient top-1/2 left-1/2 w-44	h-44"></span>
+				<span className="hidden dark:block absolute mainGradient  -bottom-8 right-0 w-72 h-44"></span>
 			<caption className="caption-top my-3 text-xl">
 				Table 2: Payments of Elite States ( <span className="text-red-500">{PaymentsData.length}</span> Payments )
 			</caption>

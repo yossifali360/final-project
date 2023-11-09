@@ -9,13 +9,14 @@ import { PostsSchema } from "../../Schemas/PostsSchema";
 import { Promotion } from "../Promotions/Promotion";
 import { Ads } from "../Ads/Ads";
 import { SeachPosts } from "./SeachPosts";
+import { getAuctions } from "../../MainServices/getAuctions";
 
 const initialValues = {
 	header: "",
 	text: "",
 	images: [],
 };
-export const Posts = ({ notify , SessionData }) => {
+export const Posts = ({ notify, SessionData }) => {
 	const [posts, setposts] = useState([]);
 	const [Loading, setLoading] = useState(false);
 
@@ -27,13 +28,14 @@ export const Posts = ({ notify , SessionData }) => {
 			setLoading(false);
 		};
 		fetchData();
-	  }, []);
-	  
-	async function handlePostSubmit(values) {
+	}, []);
+
+	async function handlePostSubmit(values,{resetForm}) {
 		await postData(values);
-		const waitForData = async () => setposts(await getPosts());
-		notify(`Your Post Added Successfuly `, "Success");
+		const waitForData = async () => setposts(await getAuctions());
+		notify(`Your Auction Added Successfuly `, "Success");
 		waitForData();
+		resetForm()
 	}
 	return (
 		<>
@@ -102,7 +104,7 @@ export const Posts = ({ notify , SessionData }) => {
 															}
 															onBlur={handleBlur}
 															type="text"
-															className="bg-transparent dark:bg-slate-900 mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+															className="bg-transparent dark:text-white dark:bg-slate-900 mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
 										focus:outline-none focus:border-sky-500 focus:ring-1 dark:border-gray-700 focus:ring-sky-500"
 															placeholder="Insert Header Here"
 														/>
@@ -120,7 +122,7 @@ export const Posts = ({ notify , SessionData }) => {
 														value={values.text}
 														onChange={handleChange}
 														onBlur={handleBlur}
-														className="bg-transparent dark:bg-slate-900 mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+														className="bg-transparent dark:text-white dark:bg-slate-900 mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
 				focus:outline-none focus:border-sky-500 focus:ring-1 dark:border-gray-700 focus:ring-sky-500"
 														id="postText"
 														cols="30"

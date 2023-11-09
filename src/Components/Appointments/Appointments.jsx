@@ -16,12 +16,15 @@ let eventsData = []
 
 export const Appointments = () => {
     const [data, setdata] = useState([])
-    let testGet = async ()=>{
-        let data = await getAppointments()
-        eventsData =[...data[0]]
-        setdata(eventsData)
-    }
-    testGet()
+    useEffect(() => {
+      const fetchData = async () => {
+        let data = await getAppointments();
+        eventsData = [...data[0]];
+        setdata(eventsData);
+      };
+    
+      fetchData();
+    }, []);
   const handleAppointmentAdd = async (args) => {
     if(args.data != undefined){
         if(args.requestType === 'eventCreate'){

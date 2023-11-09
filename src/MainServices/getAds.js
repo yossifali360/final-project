@@ -12,3 +12,4 @@ export const deleteAdData = async (id) => {
 	await myAxios.delete(`/Ads/${id}`);
 	return true;
 };
+

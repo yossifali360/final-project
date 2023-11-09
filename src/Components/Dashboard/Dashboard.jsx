@@ -34,7 +34,7 @@ let AuctionsData = [];
 let AdsData = [];
 let PromotionsData = [];
 
-export const Dashboard = () => {
+export const Dashboard = ({notify}) => {
   const [settingsTab, setSettingsTab] = useState("Appointments");
 
   const displayTab = (tabName) => {
@@ -145,7 +145,7 @@ export const Dashboard = () => {
           <PostsDataDiv PostsData={PostsData} />
         ) : null}
         {settingsTab === "Auction" ? (
-          <AuctionsDataDiv AuctionsData={AuctionsData} />
+          <AuctionsDataDiv notify={notify} AuctionsData={AuctionsData} />
         ) : null}
         {settingsTab === "Ads" ? (
           <AdsDataDiv AdsData={AdsData} />

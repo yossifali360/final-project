@@ -31,6 +31,7 @@ import { Settings } from "./Components/Settings/Settings.jsx";
 import { ChangePasswordInfo } from "./Components/Settings/ChangePassword.jsx";
 import ClipLoader from "react-spinners/ClipLoader";
 import { IsLoggedIn } from "./Components/IsLoggedIn/IsLoggedIn.jsx";
+import { AuctionsHistory } from "./Components/AuctionsHistory/AuctionsHistory.jsx";
 
 function App() {
 	const isAuth = useSelector((state) => state.authReducer.isAuth);
@@ -110,7 +111,8 @@ function App() {
 								path="ForgetPassword"
 								element={<ForgetPassword />}
 							/>
-							<Route path="Dashboard" element={<Dashboard />} />
+							<Route path="Dashboard" element={<Dashboard notify={notify} />} />
+							<Route path="AuctionsHistory" element={<AuctionsHistory SessionData={SessionData} notify={notify} />} />
 							<Route path="Auctions" element={<AllAuctions />} />
 							<Route
 								path="SingleAuctions"

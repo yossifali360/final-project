@@ -7,3 +7,7 @@ export const postPromotion = async (postPromotion) => {
 	const data = await myAxios.post(`/Promotions`, postPromotion);
 	return data.data;
 };
+export const deletePromotionData = async (id) => {
+	await myAxios.delete(`/Promotions/${id}`);
+	return true;
+};

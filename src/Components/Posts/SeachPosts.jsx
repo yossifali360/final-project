@@ -13,7 +13,7 @@ export const SeachPosts = ({setposts}) => {
         }
     }
   return (
-    <div className="flex items-center border rounded-full shadow-md my-5">
+    <div className="flex items-center border-2 border-gray-400 rounded-full shadow-md my-5">
       <div className="p-2">
         <AiOutlineSearch className="text-gray-400" />
       </div>

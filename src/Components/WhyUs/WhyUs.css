@@ -20,3 +20,9 @@
         transform: translateY(10px);
     }
 }
+@media (max-width: 640px){
+    .center{
+        height: 400px;
+        width: 100%;
+    }
+}

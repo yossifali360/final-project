@@ -20,11 +20,11 @@ export const AdsDataDiv = ({ AdsData }) => {
 	const deleteAD = async(id)=>{
 		await deleteAdData(id)
 		setAds((AdsData) => AdsData.filter((ad) => ad.id !== id))
-
 	}
 	return (
 		<>
-			<div className="m-auto w-fit">
+			<div className="m-auto w-fit relative">
+				<div className="hidden dark:block absolute mainGradient  -bottom-8 right-0 w-72 h-44"></div>
 				<h3 className="dark:text-white text-center text-xl my-3">
 					Add New Ad
 				</h3>
@@ -40,7 +40,9 @@ export const AdsDataDiv = ({ AdsData }) => {
 					Add
 				</button>
 			</div>
-			<table className="w-full text-center border-separate border border-slate-400 my-5 text-black dark:text-white">
+			<table className="w-full relative text-center border-separate border border-slate-400 my-5 text-black dark:text-white">
+			<span className="hidden dark:block absolute mainGradient top-48 left-48 w-44	h-44"></span>
+
 				<caption className="caption-top my-3 text-xl">
 					Table 5: Ads of Elite States ({" "}
 					<span className="text-red-500">{AdsData.length}</span> Ads )
