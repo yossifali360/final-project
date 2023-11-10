@@ -129,8 +129,7 @@ export const SingleAuctions = () => {
 
 						<div className="mt-8 flow-root sm:mt-12">
 							<p className="mt-4 dark:text-white">
-								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Optio numquam enim facere.
+							{AuctionData.desc}
 							</p>
 						</div>
 					</div>

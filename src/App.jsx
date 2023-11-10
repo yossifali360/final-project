@@ -36,6 +36,7 @@ import { AuctionsHistory } from "./Components/AuctionsHistory/AuctionsHistory.js
 function App() {
 	const isAuth = useSelector((state) => state.authReducer.isAuth);
 	const userData = useSelector((state) => state.authReducer.userData);
+	console.log(userData);
 	const favCart = useSelector((state) => state.favCartReducer.favCart);
 	const [Loading, setLoading] = useState(true);
 
@@ -51,6 +52,7 @@ function App() {
 
 	useEffect(() => {
 		if (isAuth) {
+			console.log(userData.id);
 			dispatch(getFavCart(userData.id));
 		}
 	}, [isAuth]);

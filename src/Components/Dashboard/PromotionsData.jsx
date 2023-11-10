@@ -24,7 +24,7 @@ export const PromotionsDataDiv = ({ PromotionsData }) => {
 	return (
 		<>
 			<div className="m-auto w-fit relative">
-				<div className="hidden dark:block absolute mainGradient  -bottom-8 right-0 w-72 h-44"></div>
+				<span className="hidden dark:block absolute mainGradient bottom-48 left-48 w-44	h-44"></span>
 				<h3 className="dark:text-white text-center text-xl my-3">
 					Add New Promotion
 				</h3>
@@ -44,8 +44,7 @@ export const PromotionsDataDiv = ({ PromotionsData }) => {
 					Add
 				</button>
 			</div>
-			<table className="w-full relative text-center border-separate border border-slate-400 my-5 text-black dark:text-white">
-				<span className="hidden dark:block absolute mainGradient top-48 left-48 w-44	h-44"></span>
+			<table className="w-full text-center border-separate border border-slate-400 my-5 text-black dark:text-white">
 				<caption className="caption-top my-3 text-xl">
 					Table 6 : Promotions of Elite States ({" "}
 					<span className="text-red-500">

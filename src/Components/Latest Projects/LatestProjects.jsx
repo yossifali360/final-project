@@ -52,7 +52,7 @@ export const LatestProjects = ({ notify }) => {
 		}
 	};
 
-	const cartItems = useSelector((state) => state.favCartReducer.favCart);
+	const cartItems = useSelector((state) => state.favCartReducer.favCart) ?? [];
 	const Hearticons = new Array(projects.length).fill(false);
 	return (
 		<section className="relative latestProjects">
@@ -73,11 +73,12 @@ export const LatestProjects = ({ notify }) => {
 						return (
 							<SwiperSlide className="px-3 pt-1 mt-5" key={index}>
 								<div className="p-5 h-full flex flex-col justify-between bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
-									{cartItems.map((item) => {
+									
+									{cartItems ? cartItems.map((item) => {
 										item.header === project.header
 											? (Hearticons[index] = true)
 											: console.log(Hearticons);
-									})}
+									}) : null}
 									<img
 										src="./assets/HeartCarton.png"
 										className={`HeartCarton absolute ${
@@ -124,11 +125,11 @@ export const LatestProjects = ({ notify }) => {
 													icon={faEnvelope}
 												/>
 											</a>
-											{cartItems.map((item) => {
+											{cartItems ? cartItems.map((item) => {
 												item.header === project.header
 													? (Hearticons[index] = true)
 													: console.log(Hearticons);
-											})}
+											}) : null}
 											<button
 												onClick={() => {
 													toggleFavorite(index);

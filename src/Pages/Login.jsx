@@ -10,7 +10,7 @@ const initialValues = {
 	password: "",
 };
 export const Login = ({notify,setSessionData}) => {
-    const users = useSelector((state) => state.authReducer.users)
+    let users = useSelector((state) => state.authReducer.users)
 
 	const dispatch = useDispatch();
 

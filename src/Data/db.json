@@ -3,18 +3,10 @@
     {
       "name": "Yossif Ali",
       "email": "yossifali149@gmail.com",
-      "password": "123456789",
+      "password": "403105403105",
       "Role": "Admin",
       "id": 1,
-      "favCart": [
-        {
-          "id": 8,
-          "header": "Coombe Lands, Wittersham, Tenterden TN30 7NU, UK",
-          "text": "Pool House at 5 bed detached home in Wittersham. ID2087. Distinctive Homes",
-          "MainImg": "./assets/img8.png",
-          "iframe": "https://my.matterport.com/show/?m=uvVtq8qEn1s"
-        }
-      ],
+      "favCart": [],
       "HisAuctions": {
         "id": 3,
         "NameOfCurrentWinner": "1",
@@ -27,7 +19,7 @@
           "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg",
           "https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg"
         ],
-        "HisPrice": "svsvsv"
+        "HisPrice": "400000"
       }
     },
     {
@@ -83,12 +75,6 @@
         "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
       ]
-    },
-    {
-      "header": "dwdwwd",
-      "text": "dwdwdwdwdwdwdwd",
-      "images": [],
-      "id": 4
     }
   ],
   "Promotions": [
@@ -99,6 +85,10 @@
     {
       "id": 4,
       "img": "./assets/promotion4.jpg"
+    },
+    {
+      "img": "dadda",
+      "id": 5
     }
   ],
   "Ads": [
@@ -183,11 +173,6 @@
       "Email": "yossifali0127@gmail.com",
       "ForgetCode": 618782,
       "id": 8
-    },
-    {
-      "Email": "yossifali149@gmail.com",
-      "ForgetCode": 209904,
-      "id": 9
     }
   ],
   "Auctions": [
@@ -223,7 +208,7 @@
     },
     {
       "id": 3,
-      "CurrentPrice": "svsvsv",
+      "CurrentPrice": "400000",
       "NameOfCurrentWinner": "1",
       "EnterPrice": 9,
       "title": "For Test Payment",
@@ -260,6 +245,14 @@
       "amount": "5000000",
       "AuctionID": "3",
       "id": 3
+    },
+    {
+      "date": "2023-11-10 00:42:13",
+      "payment_id": 87219,
+      "user": "1",
+      "amount": "400000",
+      "AuctionID": "3",
+      "id": 4
     }
   ],
   "Session": {

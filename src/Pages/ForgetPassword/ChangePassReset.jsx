@@ -7,7 +7,7 @@ import { ChangePasswordSchema } from "../../Schemas/ChangePasswordSchema";
 import emailjs from "@emailjs/browser";
 import { useSearchParams } from "react-router-dom";
 import { deleteForgetCode, getForgetCodes } from "../../MainServices/getPosts";
-import { updateUserPassword } from "../../rtc/slices/authSlice";
+import { getUsers, updateUserPassword } from "../../rtc/slices/authSlice";
 import { getUsersApi } from "../../MainServices/authentication";
 
 const initialValues = {
@@ -49,6 +49,7 @@ export const ChangePassReset = ({ notify }) => {
       );
       navigate("/Login")
       notify(`Password Changed Successfuly You can Login Now !`, "Success");
+      Dispatch(getUsers())
     } catch (error) {
       console.error("Error fetching data:", error);
     }

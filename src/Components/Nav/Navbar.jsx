@@ -57,7 +57,6 @@ export const Navbar = ({ notify, SessionData }) => {
 	};
 	const UserRef = useRef();
 	const first = useRef();
-	console.log(first);
 	useEffect(() => {
 		if (!UserRef || !UserRef.current) return;
 		function closeOptions(e) {
@@ -65,7 +64,6 @@ export const Navbar = ({ notify, SessionData }) => {
 				e.target != UserRef.current &&
 				!UserRef.current.contains(e.target)
 			) {
-				console.log("y");
 				setuserDropDown(false);
 			} else {
 				setuserDropDown(true);
@@ -151,7 +149,7 @@ export const Navbar = ({ notify, SessionData }) => {
 				<div className=" flex flex-wrap items-center justify-between mx-auto p-4">
 					<a href="#" className="flex items-center">
 						<img
-							src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaAPTv_HqWt1CyNfRw2pEc3zaOZZZOarMb72r20bdRizIXaUmZTJJqmUFAnTYtO3pXCf9tRl5iQ8xMjNpoETSIa6_sIsGg=w1920-h923"
+							src="./assets/logo.png"
 							className="h-11 mr-3"
 							alt="Flowbite Logo"
 						/>
@@ -295,9 +293,6 @@ export const Navbar = ({ notify, SessionData }) => {
 										aria-labelledby="user-menu-button"
 									>
 										<li>
-											{console.log(
-												SessionData.userData.Role
-											)}
 											{SessionData.userData.Role ==
 											"Admin" ? (
 												<Link

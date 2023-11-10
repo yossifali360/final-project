@@ -45,6 +45,7 @@ reducers:{
         state.isAuth = true;
         const data = action.payload;
         state.userData = action.payload
+        console.log(action.payload);
         localStorage.setItem("Session",JSON.stringify({isAuth: true , userData:data}))
     },
     logout : (state) =>{

@@ -12,7 +12,9 @@ const initialValues = {
 	email: "",
 	password: "",
 	confirmPassword: "",
-	Role : "User"
+	Role : "User",
+	favCart:[],
+	HisAuctions:[]
 };
 
 export const Register = ({notify}) => {
@@ -47,6 +49,7 @@ export const Register = ({notify}) => {
 				handleSubmit,
 				handleBlur,
 			}) => {
+				console.log(values);
 				return (
 					<div className="py-6">
 						<div className="flex relative bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">

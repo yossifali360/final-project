@@ -30,7 +30,6 @@ initialState,
 reducers:{
     addItem : (state , action) =>{
         console.log(state.favCart);
-        console.log("ssssssssssss");
         const productObj = state.favCart?.find(ele => ele.id === action.payload.id)
         if (!productObj){
             state.favCart.push({...action.payload})
